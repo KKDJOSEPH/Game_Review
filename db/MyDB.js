@@ -58,7 +58,7 @@ function MyDB() {
 			client = new MongoClient(url, { useUnifiedTopology: true });
 			await client.connect();
 			const db = client.db(DB_NAME);
-			const posts = db.collection("posts");
+			const posts = db.collection("games");
 			const post = await posts.find(query).toArray();
 			console.log(post);
 			return post;
@@ -68,13 +68,37 @@ function MyDB() {
 		}
 	};
 
+    myDB.getGames = async () => {
+        const client = new MongoClient(url, { useUnifiedTopology: true });
+        await client.connect();
+        //database
+        const db = client.db(DB_NAME);
+        //collection
+        const games = db.collection("games");  
+        return games;
+    };
+
+    myDB.getLikes = async () => {
+        const client = new MongoClient(url, { useUnifiedTopology: true });
+        await client.connect();
+        //database
+        const db = client.db(DB_NAME);
+        //collection
+        const game_info = db.collection("games");
+        const query = ({}, { likes: 1, _id: 0 });
+        return game_info
+          .find(query)
+          .toArray()
+          .finally(() => client.close());
+    };
+
 	myDB.deletePost = async (postTodelete) => {
 		let client;
 		try {
 			client = new MongoClient(url, { useUnifiedTopology: true });
 			await client.connect();
 			const db = client.db(DB_NAME);
-			const posts = db.collection("posts");
+			const posts = db.collection("games");
 			const post = await posts.deleteOne({ _id: ObjectID(postTodelete._id) });
 			return post;
 		} finally {
@@ -99,6 +123,7 @@ function MyDB() {
 			client.close();
 		}
 	};
+
     return myDB;
 }
 

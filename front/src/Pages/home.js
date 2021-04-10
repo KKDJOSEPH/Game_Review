@@ -15,29 +15,31 @@ function Home() {
     const fetchGames = async () => {
         console.log("Getting games...");
         try {
-            await fetch("/games")
-                .then((res) => res.json())
-                .then((result) => {
-                    setGames(result.games);
-                    setTotal(result.total);
-                });
-            console.log("Loading games...", games);
+            const resRaw = await fetch("./games");
+            const res = await resRaw.json();
+            console.log("Loading games...", res);
+            setGames(res.games);
+            setTotal(res.total);
         } catch (err) {
             console.log("Error on fetching ", err);
         }
     };
     useEffect(() => {
         fetchGames();
+        return () => {
+            //do any cleanup;
+        };
     });
 
+    console.log("Render Homepage...");
     return (
-        <div className="App">  
+        <div className="App">
+            <h1>Posts Preview</h1>
             <div className="bg">
                 <div className="main">
-                    <h1>Posts Preview</h1>
-                    <ListGames games={games}/>
-                    <Pagination total={total} page={page} onChangePage={setPage}/>
-                    <div className="row" id="viewposts"/>
+                    <ListGames games={games}></ListGames>
+                    <Pagination total={total} page={page} onChangePage={setPage}></Pagination>
+                    <div className="row" id="viewposts"></div>
                     <div className="menu">
                         <div className="corner">
                             <Link to="/signup">
