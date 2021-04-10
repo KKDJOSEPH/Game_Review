@@ -1,8 +1,9 @@
 const { MongoClient, ObjectID } = require("mongodb");
 require("dotenv").config();
+
 function MyDB() {
     const myDB = {};
-    const DB_NAME = "apartmentsDB";
+    const DB_NAME = "gamesDB";
     const url = process.env.URL;
 
     myDB.signin = async (Users) => {
@@ -50,6 +51,54 @@ function MyDB() {
         }
         return flag;
     };
+
+    myDB.getPosts = async (query = {}) => {
+		let client;
+		try {
+			client = new MongoClient(url, { useUnifiedTopology: true });
+			await client.connect();
+			const db = client.db(DB_NAME);
+			const posts = db.collection("posts");
+			const post = await posts.find(query).toArray();
+			console.log(post);
+			return post;
+		} finally {
+			console.log("Closing the connection");
+			client.close();
+		}
+	};
+
+	myDB.deletePost = async (postTodelete) => {
+		let client;
+		try {
+			client = new MongoClient(url, { useUnifiedTopology: true });
+			await client.connect();
+			const db = client.db(DB_NAME);
+			const posts = db.collection("posts");
+			const post = await posts.deleteOne({ _id: ObjectID(postTodelete._id) });
+			return post;
+		} finally {
+			console.log("Closing the connection");
+			client.close();
+		}
+	};
+
+	myDB.createPost = async (newPost) => {
+		//console.log("WHAT IS THE NEW POST?     ", newPost);
+		let client;
+		try {
+			client = new MongoClient(url, { useUnifiedTopology: true });
+			await client.connect();
+			const db = client.db(DB_NAME);
+			const posts = db.collection("posts");
+			const post = await posts.insertOne(newPost);
+			//console.log("WHAT IS THE POST HERE     ", post);
+			return post;
+		} finally {
+			console.log("Closing the connection");
+			client.close();
+		}
+	};
     return myDB;
 }
 
