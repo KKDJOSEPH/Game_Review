@@ -25,7 +25,7 @@ export default function PaginationComponent({ page, onChangePage, total }) {
   
     return (
       <nav aria-label="Page navigation example">
-        <ul className="pagination">
+        <ul className="Pagination">
           <li className="page-item">
             <button className="page-link" onClick={() => onChangePage(0)}>
               First

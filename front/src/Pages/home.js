@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../css/style.css"
 import { Link } from "react-router-dom";
 import ListGames from "../components/ListGames.js";
-import pagination from "../components/Pagination.js";
+import Pagination from "../components/Pagination.js";
 
 
 function Home() {
@@ -35,9 +35,9 @@ function Home() {
             <div className="bg">
                 <div className="main">
                     <h1>Posts Preview</h1>
-                    <ListGames games={games}></ListGames>
-                    <pagination total={total} page={page} onChangePage={setPage}></pagination>
-                    <div className="row" id="viewposts"></div>
+                    <ListGames games={games}/>
+                    <Pagination total={total} page={page} onChangePage={setPage}/>
+                    <div className="row" id="viewposts"/>
                     <div className="menu">
                         <div className="corner">
                             <Link to="/signup">
