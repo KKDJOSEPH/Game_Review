@@ -1,45 +1,28 @@
 import React, { useState, useEffect } from "react";
 import "../css/style.css"
 import { Link } from "react-router-dom";
-import ListGames from "../components/ListGames.js";
-import Pagination from "../components/Pagination.js";
+import Games from "../components/Games";
 
-
-function Home() {
+function Home(props) {
     const [games, setGames] = useState([]);
-    //const [query, setQuery] = useState("");
-    const [page, setPage] = useState(0);
-    const [total, setTotal] = useState(0);
-    //const [reload, setReload] = useState(0);
-
-    const fetchGames = async () => {
-        console.log("Getting games...");
-        try {
-            const resRaw = await fetch("./games");
-            const res = await resRaw.json();
-            console.log("Loading games...", res);
-            setGames(res.games);
-            setTotal(res.total);
-        } catch (err) {
-            console.log("Error on fetching ", err);
-        }
-    };
     useEffect(() => {
-        fetchGames();
-        return () => {
-            //do any cleanup;
+        const getGame = async () => {
+            try {
+                const _game = await fetch("/game").then((res) => res.json());
+                setGames(_game);
+            } catch (err) {
+                console.log("error ", err);
+            }
         };
-    });
-
+        getGame();
+    }, []);
     console.log("Render Homepage...");
     return (
         <div className="App">
-            <h1>Posts Preview</h1>
+            <h1>Find your games</h1>
             <div className="bg">
                 <div className="main">
-                    <ListGames games={games}></ListGames>
-                    <Pagination total={total} page={page} onChangePage={setPage}></Pagination>
-                    <div className="row" id="viewposts"></div>
+                    <Games  game={games}/>
                     <div className="menu">
                         <div className="corner">
                             <Link to="/signup">

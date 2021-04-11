@@ -7,7 +7,8 @@ import SignIn from "./Pages/signin";
 
 
 function App() {
-  return (
+
+    return (
       <div className="App">
           <Router>
               <Switch>
@@ -17,7 +18,7 @@ function App() {
               </Switch>
           </Router>
       </div>
-  );
+    );
 }
 
 export default App;

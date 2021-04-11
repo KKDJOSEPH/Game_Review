@@ -74,8 +74,12 @@ function MyDB() {
         //database
         const db = client.db(DB_NAME);
         //collection
-        const games = db.collection("games");  
-        return games;
+        const gameCollection = db.collection("gameInfo");
+        const query = {};
+        return gameCollection.find(query)
+            .sort({_id: 1})
+            .toArray()
+            .finally(() => client.close());
     };
 
     myDB.getLikes = async () => {
@@ -84,7 +88,7 @@ function MyDB() {
         //database
         const db = client.db(DB_NAME);
         //collection
-        const game_info = db.collection("games");
+        const game_info = db.collection("gameInfo");
         const query = ({}, { likes: 1, _id: 0 });
         return game_info
           .find(query)
@@ -123,6 +127,141 @@ function MyDB() {
 			client.close();
 		}
 	};
+    myDB.loadGame = async () => {
+        const client = new MongoClient(url, {useUnifiedTopology: true});
+        await client.connect();
+        //database
+        const db = client.db(DB_NAME);
+        db.collection("gameInfo", (err, collection) =>{
+           collection.insertOne({
+               _id: "001",
+               Name: "Pokémon Shield",
+               Rating: "5",
+               Type: "Action",
+           });
+            collection.insertOne({
+                _id: "002",
+                Name: "Ring Fit Adventure",
+                Rating: "5",
+                Type: "Action",
+            });
+            collection.insertOne({
+                _id: "003",
+                Name: "Apex Legends",
+                Rating: "5",
+                Type: "Action",
+            });
+            collection.insertOne({
+                _id: "004",
+                Name: "Pikmin3 Deluxe",
+                Rating: "5",
+                Type: "Action",
+            });
+            collection.insertOne({
+                _id: "005",
+                Name: "Xenoblade",
+                Rating: "5",
+                Type: "Action",
+            });
+            collection.insertOne({
+                _id: "006",
+                Name: "Animal Crossing",
+                Rating: "5",
+                Type: "Action",
+            });
+            collection.insertOne({
+                _id: "007",
+                Name: "Pokémon Sword",
+                Rating: "5",
+                Type: "Action",
+            });
+            collection.insertOne({
+                _id: "008",
+                Name: "Luigi's Mansion",
+                Rating: "5",
+                Type: "Action",
+            });
+            collection.insertOne({
+                _id: "009",
+                Name: "Link's Awakeding",
+                Rating: "5",
+                Type: "Action",
+            });
+            collection.insertOne({
+                _id: "010",
+                Name: "DRAGON QUEST",
+                Rating: "5",
+                Type: "Action",
+            });
+            collection.insertOne({
+                _id: "011",
+                Name: "MARVEL ULTIMATE ALLIANCE",
+                Rating: "5",
+                Type: "Action",
+            });
+            collection.insertOne({
+                _id: "012",
+                Name: "Pokémon Let's Go",
+                Rating: "5",
+                Type: "Action",
+            });
+            collection.insertOne({
+                _id: "013",
+                Name: "Overcooked 2",
+                Rating: "5",
+                Type: "Action",
+            });
+            collection.insertOne({
+                _id: "014",
+                Name: "Bayonetta",
+                Rating: "5",
+                Type: "Action",
+            });
+            collection.insertOne({
+                _id: "015",
+                Name: "Mario Tennis",
+                Rating: "5",
+                Type: "Action"
+            });
+            collection.insertOne({
+                _id: "016",
+                Name: "Fortnite",
+                Rating: "5",
+                Type: "Action",
+            });
+            collection.insertOne({
+                _id: "017",
+                Name: "Xenoblade 2",
+                Rating: "5",
+                Type: "Action",
+            });
+            collection.insertOne({
+                _id: "018",
+                Name: "Hyrule Warriors",
+                Rating: "5",
+                Type: "Action",
+            });
+            collection.insertOne({
+                _id: "019",
+                Name: "Kirby Fighters",
+                Rating: "5",
+                Type: "Action",
+            });
+            collection.insertOne({
+                _id: "020",
+                Name: "Pokémon Let's Go2",
+                Rating: "5",
+                Type: "Action",
+            });
+            collection.insertOne({
+                _id: "021",
+                Name: "Tetris99",
+                Rating: "5",
+                Type: "Action",
+            });
+        });
+        return;
+    };
 
     return myDB;
 }
