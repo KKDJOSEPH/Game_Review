@@ -40,11 +40,10 @@ $ yarn start
   * routes: Backend javascript files.
 
 ## Screenshots:
-![](Screenshots/homepage.jpg)
-![](Screenshots/signin.jpg)
-![](Screenshots/signup.jpg)
-![](Screenshots/preview.jpg)
-![](Screenshots/forum.jpg)
+![](Screenshots/mainpage.png)
+![](Screenshots/signin.png)
+![](Screenshots/search.png)
+![](Screenshots/rating.png)
 
 ### License
 [MIT]()
