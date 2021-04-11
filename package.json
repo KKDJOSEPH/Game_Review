@@ -7,6 +7,8 @@
     "nodemon": "node ./node_modules/nodemon/bin/nodemon.js ./bin/www"
   },
   "dependencies": {
+    "@material-ui/core": "^4.11.3",
+    "@material-ui/lab": "^4.0.0-alpha.57",
     "cookie-parser": "~1.4.4",
     "debug": "^4.3.1",
     "dotenv": "^8.2.0",
@@ -16,7 +18,9 @@
     "morgan": "~1.9.1",
     "nodemon": "^2.0.7",
     "passport": "^0.4.1",
-    "passport-local": "^1.0.0"
+    "passport-local": "^1.0.0",
+    "react-icons": "^4.2.0",
+    "react-router-dom": "^5.2.0"
   },
   "devDependencies": {
     "eslint": "^7.23.0",

@@ -1,9 +1,15 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import "../css/Game.css";
+import {Link} from "react-router-dom";
+import Pagination from "@material-ui/lab/Pagination";
 
 function Games(props) {
     const [search, setGame] = useState("");
+    const [page, setPage] = useState(1);
+    const handlePaginationChange = (event, value) => {
+        setPage(value);
+    };
 
     const renderGames = () => {
         return props.game
@@ -24,25 +30,13 @@ function Games(props) {
                         <br />
                         Rating: {p.Rating} <br />
                         Type: {p.Type} <br />
-                        <div>
-                            <label htmlFor="position">
-                                Rate this game: {" "}
-                                <select name="position" id={`position${p._id}`}>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                </select>
-                            </label>
-                        </div>
+                        <Link to={`/review/${p._id}`}> Check the reviews </Link>
                         <br />
                     </li>
                 /*</div>*/
             ));
     };
 
-    console.log("rendering Pokemon", search);
 
     return (
         <div className="col">
@@ -56,6 +50,11 @@ function Games(props) {
             </label>
             <br />
             <ol className="Game-ol">{renderGames()}</ol>
+            <Pagination
+                count={Math.floor(21 / 3)}
+                page={page}
+                onChange={handlePaginationChange}
+            />
         </div>
     );
 }

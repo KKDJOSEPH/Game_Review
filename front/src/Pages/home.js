@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../css/style.css"
-import { Link } from "react-router-dom";
+import NavigationComponent from "../components/navbar";
 import Games from "../components/Games";
 
 function Home(props) {
@@ -19,12 +19,12 @@ function Home(props) {
     console.log("Render Homepage...");
     return (
         <div className="App">
-            <h1>Find your games</h1>
             <div className="bg">
+                <div><NavigationComponent /></div>
                 <div className="main">
                     <Games  game={games}/>
                     <div className="menu">
-                        <div className="corner">
+{/*                        <div className="corner">
                             <Link to="/signup">
                                 <button className="btn btn-primary button" role="button">
                                     Sign Up
@@ -40,7 +40,8 @@ function Home(props) {
                                     Add a New Game
                                 </button>
                             </Link>
-                        </div>
+                        </div>*/}
+
                     </div>
                 </div>
             </div>

@@ -2,10 +2,7 @@ const express = require("express");
 const router = express.Router();
 const myDB = require("../db/MyDB.js");
 const secret = require("./crypt.js");
-/*const alert = require("alert");
 
-let signinflag = false;
-let signupflag = false;*/
 router.post("/signin", async function (req, res) {
   if(req.body.userName === ""){
     res.redirect("/signin?error=Username is empty");
@@ -26,7 +23,7 @@ router.post("/signin", async function (req, res) {
       console.log(req.body, "Sign in successful");
       //textcon = "Sign in successful";
       // 进入到登录成功的页面
-      res.redirect("/");
+      res.redirect("/Game_in");
 
     } else {
       console.log(req.body, "Wrong username or password");

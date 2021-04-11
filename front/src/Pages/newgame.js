@@ -1,7 +1,6 @@
-
 import React from "react";
-import { useHistory } from "react-router-dom";
-import { useForm } from "react-hook-form";
+import {useHistory} from "react-router-dom";
+import {useForm} from "react-hook-form";
 
 function NewGame(props) {
   const history = useHistory();
