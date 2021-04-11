@@ -1,5 +1,5 @@
 <h1 align="center">
-:house_with_garden: Game Review
+:video_game: Game Review
 </h1>
 <p align="center">
 React hook + Nodejs + Express + MongoDB + Heroku
