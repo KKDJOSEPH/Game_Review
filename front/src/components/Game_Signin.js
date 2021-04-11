@@ -11,7 +11,7 @@ function Games_Signin(props) {
         return props.game
             .filter(
                 (p) =>
-                    p.Name && p.Name.toLowerCase().startsWith(search.toLowerCase())
+                    (p.Type && p.Type.toLowerCase().startsWith(search.toLowerCase())) || (p.Name && p.Name.toLowerCase().startsWith(search.toLowerCase()))
             )
             .map((p) => (
                 <li key={p._id} className="Game-li">
@@ -113,11 +113,11 @@ function Games_Signin(props) {
                         <li className="nav-item">
                             Search :{" "}
                             <input
+                                className="nav-item"
                                 type="text"
                                 value={search}
                                 onChange={(evt) => setGame(evt.target.value)}
                             />
-
                         </li>
                     </ul>
                 </div>
