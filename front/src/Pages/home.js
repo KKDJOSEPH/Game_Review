@@ -20,28 +20,9 @@ function Home(props) {
     return (
         <div className="App">
             <div className="bg">
-                <div><NavigationComponent /></div>
                 <div className="main">
                     <Games  game={games}/>
                     <div className="menu">
-{/*                        <div className="corner">
-                            <Link to="/signup">
-                                <button className="btn btn-primary button" role="button">
-                                    Sign Up
-                                </button>
-                            </Link>
-                            <Link to="/signin">
-                                <button className="btn btn-primary button" role="button">
-                                    Sign In
-                                </button>
-                            </Link>
-                            <Link to="/newgame">
-                                <button className="btn btn-primary button" role="button">
-                                    Add a New Game
-                                </button>
-                            </Link>
-                        </div>*/}
-
                     </div>
                 </div>
             </div>

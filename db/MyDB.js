@@ -146,13 +146,13 @@ function MyDB() {
                _id: "001",
                Name: "Pokémon Shield",
                Rating: "5",
-               Type: "Action",
+               Type: "Pokemon",
            });
             collection.insertOne({
                 _id: "002",
                 Name: "Ring Fit Adventure",
                 Rating: "5",
-                Type: "Action",
+                Type: "Sport",
             });
             collection.insertOne({
                 _id: "003",
@@ -164,37 +164,37 @@ function MyDB() {
                 _id: "004",
                 Name: "Pikmin3 Deluxe",
                 Rating: "5",
-                Type: "Action",
+                Type: "Adventure",
             });
             collection.insertOne({
                 _id: "005",
                 Name: "Xenoblade",
                 Rating: "5",
-                Type: "Action",
+                Type: "Adventure",
             });
             collection.insertOne({
                 _id: "006",
                 Name: "Animal Crossing",
                 Rating: "5",
-                Type: "Action",
+                Type: "RPG",
             });
             collection.insertOne({
                 _id: "007",
                 Name: "Pokémon Sword",
                 Rating: "5",
-                Type: "Action",
+                Type: "Pokemon",
             });
             collection.insertOne({
                 _id: "008",
                 Name: "Luigi's Mansion",
                 Rating: "5",
-                Type: "Action",
+                Type: "Adventure",
             });
             collection.insertOne({
                 _id: "009",
                 Name: "Link's Awakeding",
                 Rating: "5",
-                Type: "Action",
+                Type: "RPG",
             });
             collection.insertOne({
                 _id: "010",
@@ -212,13 +212,13 @@ function MyDB() {
                 _id: "012",
                 Name: "Pokémon Let's Go",
                 Rating: "5",
-                Type: "Action",
+                Type: "Pokemon",
             });
             collection.insertOne({
                 _id: "013",
                 Name: "Overcooked 2",
                 Rating: "5",
-                Type: "Action",
+                Type: "RPG",
             });
             collection.insertOne({
                 _id: "014",
@@ -230,7 +230,7 @@ function MyDB() {
                 _id: "015",
                 Name: "Mario Tennis",
                 Rating: "5",
-                Type: "Action"
+                Type: "Sport"
             });
             collection.insertOne({
                 _id: "016",
@@ -242,7 +242,7 @@ function MyDB() {
                 _id: "017",
                 Name: "Xenoblade 2",
                 Rating: "5",
-                Type: "Action",
+                Type: "Adventure",
             });
             collection.insertOne({
                 _id: "018",
@@ -260,7 +260,7 @@ function MyDB() {
                 _id: "020",
                 Name: "Pokémon Let's Go2",
                 Rating: "5",
-                Type: "Action",
+                Type: "Pokemon",
             });
             collection.insertOne({
                 _id: "021",

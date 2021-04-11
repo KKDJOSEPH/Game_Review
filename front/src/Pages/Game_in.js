@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "../css/style.css"
-import { Link } from "react-router-dom";
 import Games_Signin from "../components/Game_Signin";
 import NavigationComponent from "../components/navbar";
 
-function Game_in(props) {
+function Game_in() {
     const [games, setGames] = useState([]);
     useEffect(() => {
         const getGame = async () => {
@@ -20,7 +19,6 @@ function Game_in(props) {
     console.log("Render Homepage...");
     return (
         <div className="App">
-            <div><NavigationComponent /></div>
             <div className="bg">
                 <div className="main">
                     <Games_Signin  game={games}/>
