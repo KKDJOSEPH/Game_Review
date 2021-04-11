@@ -13,7 +13,7 @@ React hook + Nodejs + Express + MongoDB + Heroku
 - Project Objective: Apply the concepts learned in class by building a basic fullstack application with React-hook, Nodejs, Express, javascript and MongoDB. Deploy on Heroku.
 - Class Link: https://johnguerra.co/classes/webDevelopment_spring_2021/
 - Professor: <a href="https://johnguerra.co/"> John Alexis Guerra Gómez </a>
-- <a href="https://cryptic-stream-54472.herokuapp.com/index.html"> Here to Enjoy </a>
+- <a href="https://gamereviewwithkkd.herokuapp.com/"> Here to Enjoy </a>
 - <a href="https://www.youtube.com/watch?v=Re4CF1S1yOk"> Demo Video </a>
 
 ## Clone or Download
