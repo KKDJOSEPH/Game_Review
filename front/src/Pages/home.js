@@ -35,6 +35,11 @@ function Home(props) {
                                     Sign In
                                 </button>
                             </Link>
+                            <Link to="/newgame">
+                                <button className="btn btn-primary button" role="button">
+                                    Add a New Game
+                                </button>
+                            </Link>
                         </div>
                     </div>
                 </div>

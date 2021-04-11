@@ -127,6 +127,15 @@ function MyDB() {
 			client.close();
 		}
 	};
+
+    myDB.insertGame = async (newGame) => {
+        const client = new MongoClient(url, {useUnifiedTopology: true});
+        await client.connect();
+        const db = client.db(DB_NAME);
+        const games = db.collection("gameInfo");
+        games.insertOne(newGame);
+    };
+
     myDB.loadGame = async () => {
         const client = new MongoClient(url, {useUnifiedTopology: true});
         await client.connect();
