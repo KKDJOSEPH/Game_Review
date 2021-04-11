@@ -14,7 +14,6 @@ function Games(props) {
                     (p.Type && p.Type.toLowerCase().startsWith(search.toLowerCase())) || (p.Name && p.Name.toLowerCase().startsWith(search.toLowerCase()))
             )
             .map((p) => (
-                /*<div key={p._id} className="card Game-li">*/
                     <li key={p._id} className="Game-li">
                         {p.Name} (#{p._id}) <br />
                         <img
@@ -29,7 +28,6 @@ function Games(props) {
                         <Link to={`/review/${p._id}`}> Check the reviews </Link>
                         <br />
                     </li>
-                /*</div>*/
             ));
     };
 

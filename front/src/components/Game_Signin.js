@@ -14,7 +14,6 @@ function Games_Signin(props) {
                     p.Name && p.Name.toLowerCase().startsWith(search.toLowerCase())
             )
             .map((p) => (
-                /*<div key={p._id} className="card Game-li">*/
                 <li key={p._id} className="Game-li">
                     {p.Name} (#{p._id}) <br />
                     <img
@@ -34,7 +33,6 @@ function Games_Signin(props) {
                     <Link to={`/evaluate/${p._id}`}> Evaluate this game </Link>
                     <br />
                 </li>
-                /*</div>*/
             ));
     };
 

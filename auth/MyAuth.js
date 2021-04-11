@@ -21,18 +21,12 @@ router.post("/signin", async function (req, res) {
     //let textcon;
     if(signinflag) {
       console.log(req.body, "Sign in successful");
-      //textcon = "Sign in successful";
-      // 进入到登录成功的页面
       res.redirect("/Game_in");
 
     } else {
       console.log(req.body, "Wrong username or password");
-      // 进入到登录失败的页面
-      //textcon = "Wrong username or password";
-      //alert("Wrong user name or password");
       res.redirect("/signin?error=Wrong username or password");
     }
-    //res.send({flag: signinflag, text: textcon});
   }
 });
 
@@ -47,8 +41,6 @@ router.post("/signup", async function (req, res) {
     res.redirect("/signup?error=Passwords are not the same");
     return;
   }else{
-    //console.log("what is the body here??   ", req.body);
-    //let textcon;
     const pw = secret.encrypt(req.body.passWord);
     const body = {
       "userName": req.body.userName,
@@ -58,17 +50,11 @@ router.post("/signup", async function (req, res) {
     console.log("what is this flag here???", signupflag);
     if(signupflag){
       console.log(req.body, "Sign up successful");
-      //textcon = "Sign up successful";
-      //res.send({flag: true, text: "Wtf"});
       res.redirect("/signin");
     }else{
       console.log(req.body, "User name is already taken");
-      //textcon = "User name is already taken";
-      //alert("User name is already taken");
-      //res.send({flag: false, text: "User name is already taken"});
       res.redirect("/signup?error=User name is already taken");
     }
-    //res.send({flag: signupflag, text: textcon});
   }
 });
 

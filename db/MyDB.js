@@ -7,14 +7,11 @@ function MyDB() {
     const url = process.env.URL;
 
     myDB.signin = async (Users) => {
-        //console.log("users are here:  ", Users);
         const client = new MongoClient(url, {useUnifiedTopology: true});
         await client.connect();
-        //database
         const db = client.db(DB_NAME);
         let flag = false;
         const result = await db.collection("userInfo").find().toArray();
-        //console.log("result is here:   ", result);
         result.forEach(item => {
             if (item.name === Users.userName && item.password === Users.passWord || flag) {
                 flag = true;
@@ -29,7 +26,6 @@ function MyDB() {
     myDB.signup = async (Users) =>{
         const client = new MongoClient(url, {useUnifiedTopology: true});
         await client.connect();
-        //database
         const db = client.db(DB_NAME);
         const result = await db.collection("userInfo");
         const users = await result.find().toArray();
@@ -37,7 +33,6 @@ function MyDB() {
         let flag = true;
         await users.every(item => {
             if (item.name === Users.userName) {
-                //console.log("I'm HERERRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR");
                 flag =  false;
                 return flag;
             }
@@ -46,7 +41,6 @@ function MyDB() {
             const myobj = {name: Users.userName,password: Users.passWord};
             await result.insertOne(myobj, function(err) {
                 if (err) throw err;
-                //console.log("WTFFFFFFF");
             });
         }
         return flag;
@@ -71,9 +65,7 @@ function MyDB() {
     myDB.getGames = async () => {
         const client = new MongoClient(url, { useUnifiedTopology: true });
         await client.connect();
-        //database
         const db = client.db(DB_NAME);
-        //collection
         const gameCollection = db.collection("gameInfo");
         const query = {};
         return gameCollection.find(query)
@@ -85,9 +77,7 @@ function MyDB() {
     myDB.getLikes = async () => {
         const client = new MongoClient(url, { useUnifiedTopology: true });
         await client.connect();
-        //database
         const db = client.db(DB_NAME);
-        //collection
         const game_info = db.collection("gameInfo");
         const query = ({}, { likes: 1, _id: 0 });
         return game_info
@@ -112,7 +102,6 @@ function MyDB() {
 	};
 
 	myDB.createPost = async (newPost) => {
-		//console.log("WHAT IS THE NEW POST?     ", newPost);
 		let client;
 		try {
 			client = new MongoClient(url, { useUnifiedTopology: true });
@@ -120,7 +109,6 @@ function MyDB() {
 			const db = client.db(DB_NAME);
 			const posts = db.collection("posts");
 			const post = await posts.insertOne(newPost);
-			//console.log("WHAT IS THE POST HERE     ", post);
 			return post;
 		} finally {
 			console.log("Closing the connection");
@@ -139,7 +127,6 @@ function MyDB() {
     myDB.loadGame = async () => {
         const client = new MongoClient(url, {useUnifiedTopology: true});
         await client.connect();
-        //database
         const db = client.db(DB_NAME);
         db.collection("gameInfo", (err, collection) =>{
            collection.insertOne({

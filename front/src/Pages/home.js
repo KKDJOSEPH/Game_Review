@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "../css/style.css"
-import NavigationComponent from "../components/navbar";
 import Games from "../components/Games";
 
 function Home(props) {
