@@ -5,7 +5,7 @@ const myDB = require("../db/MyDB.js");
  
 /* GET home page. */
 // eslint-disable-next-line no-unused-vars
-router.get("/game", async (req, res) => {
+router.get("/games", async (req, res) => {
   const games = await myDB.getGames();
   /*console.log(games);*/
   await res.json(games);
@@ -18,12 +18,12 @@ router.get("*", (req, res) =>
 // eslint-disable-next-line no-unused-vars
 router.post("/new", async (req, res) => {
   const name = req.body.name;
-  const imageID = req.body.image;
+  const image = req.body.image;
   const rating = req.body.rating;
   const type = req.body.type;
   const newGame = {
     Name: name,
-    _id: imageID,
+    _id: image,
     Rating: rating,
     Type: type
   };

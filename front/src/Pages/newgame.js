@@ -8,12 +8,10 @@ function NewGame(props) {
   const { register, handleSubmit } = useForm();
 
   async function postData(data) {
-    // Default options are marked with *
     await fetch("/new", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        // 'Content-Type': 'application/x-www-form-urlencoded',
       },
 
       body: JSON.stringify(data),
