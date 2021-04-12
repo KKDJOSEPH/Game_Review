@@ -48,7 +48,7 @@ function Review(props) {
         console.log("Comments:");
         return (
           <div>
-              {currentGame.commentList}
+              {currentGame.Comment}
           </div>
         )
     }

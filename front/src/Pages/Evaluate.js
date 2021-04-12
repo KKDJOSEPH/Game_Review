@@ -50,7 +50,6 @@ function Evaluate(props) {
       console.log("Comments:");
       return (
         <div
-          //className="media-body p-2 shadow-sm rounded bg-light border"
           key={currentGame._id}
         >
           <div>
@@ -62,14 +61,12 @@ function Evaluate(props) {
   }
 
   async function postComment(data) {
-    // Default options are marked with *
     await fetch("/comment", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        // 'Content-Type': 'application/x-www-form-urlencoded',
       },
-      body: JSON.stringify(data), // body data type must match "Content-Type" header
+      body: JSON.stringify(data),
     });
   }
 
@@ -106,17 +103,3 @@ function Evaluate(props) {
 }      
 
 export default Evaluate;
-
-
-// function Evaluate(props) {
-//     console.log("Render Homepage...");
-//     return (
-//         <div className="App">
-//             <h1>{props.id}</h1>
-//             <h1>{props.index}</h1>
-// {/*            <h1>{props.game}</h1>*/}
-//         </div>
-//     );
-// }
-
-// export default Evaluate;
