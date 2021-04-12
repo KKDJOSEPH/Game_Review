@@ -1,4 +1,4 @@
-const { MongoClient, ObjectID } = require("mongodb");
+const { MongoClient } = require("mongodb");
 require("dotenv").config();
 
 function MyDB() {
@@ -46,22 +46,6 @@ function MyDB() {
         return flag;
     };
 
-    myDB.getPosts = async (query = {}) => {
-		let client;
-		try {
-			client = new MongoClient(url, { useUnifiedTopology: true });
-			await client.connect();
-			const db = client.db(DB_NAME);
-			const posts = db.collection("games");
-			const post = await posts.find(query).toArray();
-			console.log(post);
-			return post;
-		} finally {
-			console.log("Closing the connection");
-			client.close();
-		}
-	};
-
     myDB.getGames = async () => {
         const client = new MongoClient(url, { useUnifiedTopology: true });
         await client.connect();
@@ -74,48 +58,6 @@ function MyDB() {
             .finally(() => client.close());
     };
 
-    myDB.getLikes = async () => {
-        const client = new MongoClient(url, { useUnifiedTopology: true });
-        await client.connect();
-        const db = client.db(DB_NAME);
-        const game_info = db.collection("gameInfo");
-        const query = ({}, { likes: 1, _id: 0 });
-        return game_info
-          .find(query)
-          .toArray()
-          .finally(() => client.close());
-    };
-
-	myDB.deletePost = async (postTodelete) => {
-		let client;
-		try {
-			client = new MongoClient(url, { useUnifiedTopology: true });
-			await client.connect();
-			const db = client.db(DB_NAME);
-			const posts = db.collection("games");
-			const post = await posts.deleteOne({ _id: ObjectID(postTodelete._id) });
-			return post;
-		} finally {
-			console.log("Closing the connection");
-			client.close();
-		}
-	};
-
-	myDB.createPost = async (newPost) => {
-		let client;
-		try {
-			client = new MongoClient(url, { useUnifiedTopology: true });
-			await client.connect();
-			const db = client.db(DB_NAME);
-			const posts = db.collection("posts");
-			const post = await posts.insertOne(newPost);
-			return post;
-		} finally {
-			console.log("Closing the connection");
-			client.close();
-		}
-	};
-
     myDB.insertGame = async (newGame) => {
         const client = new MongoClient(url, {useUnifiedTopology: true});
         await client.connect();
@@ -123,6 +65,24 @@ function MyDB() {
         const games = db.collection("gameInfo");
         games.insertOne(newGame);
     };
+
+    myDB.addComment = async (newComment) =>{
+        const client = new MongoClient(url, {useUnifiedTopology: true});
+        await client.connect();
+        const db = client.db(DB_NAME);
+        const ObjectId = require("mongodb").ObjectId;
+        const id = newComment[0];
+        const o_id = new ObjectId(id);
+        const games = db.collection("gameInfo");
+        const query = { _id: o_id };
+        const update = {
+            $push: {
+                comment: newComment[1],
+            }
+        };
+        games.findOneAndUpdate(query, update);
+        console.log(query)
+    }
 
     myDB.loadGame = async () => {
         const client = new MongoClient(url, {useUnifiedTopology: true});

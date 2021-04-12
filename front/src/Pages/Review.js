@@ -1,14 +1,74 @@
-import React, { useState, useEffect } from "react";
-import "../css/style.css"
+import { useHistory } from "react-router";
+import "../css/Evaluate.css";
+
+import {
+    Card,
+    CardImg,
+    CardTitle,
+    CardSubtitle,
+    CardBody,
+} from "reactstrap";
 
 function Review(props) {
-    console.log("Render Homepage...");
+    const history = useHistory();
+    let id = props.id;
+    let game = props.game;
+    let index = props.index;
+    let currentGame = game[index];
+
+    const renderGames = () => {
+        return(
+            <div className="card-deck">
+                <Card style={{ width: "30rem", margin: "5rem" }} key={id}>
+                    <CardImg
+                        top
+                        width="100%"
+                        height="40%"
+                        src={`../image/${id}.jpg`}
+                        className="card-img-top"
+                        alt="game image"
+                    />
+                    <CardBody>
+                        <CardTitle>
+                            <strong>
+                                <p>{currentGame.Name}</p >
+                            </strong>
+                        </CardTitle>
+                        <CardSubtitle>
+                            <span className="type">Type: {currentGame.Type}</span>
+                        </CardSubtitle>
+                    </CardBody>
+                </Card>
+            </div>
+        )
+
+    };
+
+    function RevealComments() {
+        console.log("Comments:");
+        return (
+          <div>
+              {currentGame.commentList}
+          </div>
+        )
+    }
+
     return (
-        <div className="App">
-            <h1>{props.id}</h1>
-            <h1>{props.index}</h1>
-{/*            <h1>{props.game}</h1>*/}
+      <div className="row">
+        <div className="col-8">
+          {renderGames()}
+          {RevealComments()}
+        <br />
+        <br />
+        <button
+              type="button"
+              className="corner btn btn-outline-dark"
+              onClick={() => history.push("/")}
+            >
+            Return To Home
+        </button>
         </div>
+      </div>
     );
 }
 

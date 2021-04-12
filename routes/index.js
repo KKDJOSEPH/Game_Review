@@ -15,6 +15,7 @@ router.get("*", (req, res) =>
   res.sendFile(path.resolve("front", "build", "index.html"))
 );
 
+// eslint-disable-next-line no-unused-vars
 router.post("/new", async (req, res) => {
   const name = req.body.name;
   const imageID = req.body.image;
@@ -27,7 +28,15 @@ router.post("/new", async (req, res) => {
     Type: type
   };
   console.log(newGame);
-  await myDB.insertName(newGame);
+  await myDB.insertGame(newGame);
+});
+
+// eslint-disable-next-line no-unused-vars
+router.post("/comment", async (req, res) => {
+  const id = req.body._id;
+  const comment = req.body.comment;
+  const newGame = {"_id": id, "comment": comment};
+  await myDB.addComment(newGame);
 });
 
 module.exports = router;
