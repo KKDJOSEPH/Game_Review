@@ -3,6 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="227d21c0-cf6c-4f97-b193-9cecd2b76b1b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/Pages/Evaluate.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/Pages/Evaluate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/Pages/Game_in.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/Pages/Game_in.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/css/Evaluate.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/css/Evaluate.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -32,7 +36,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Project_2/Find_Your_Apartment" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -90,6 +94,7 @@
       <workItem from="1618073705262" duration="2683000" />
       <workItem from="1618096488821" duration="34212000" />
       <workItem from="1618181161758" duration="2130000" />
+      <workItem from="1618273833268" duration="1503000" />
     </task>
     <servers />
   </component>

@@ -9,7 +9,7 @@ body {
   background-color: #f7f6f0;
 }
 .card-body {
-  background-color: #ffffff;
+  background-color: #faf9de;
 }
 .card-footer {
   background-color: #ffffff;
@@ -61,4 +61,10 @@ h1 {
   position: fixed;
   left: 2px;
   top: 2px;
+}
+
+.text{
+  display:block;
+  word-break:keep-all;           /* 不换行 */
+  white-space:nowrap;
 }

@@ -81,7 +81,7 @@ function Evaluate(props) {
         <button
             type="button"
             className="corner btn btn-outline-dark"
-            onClick={() => history.push("/")}
+            onClick={() => history.push("/Game_in")}
           >
             Return To Home
         </button>
@@ -93,8 +93,8 @@ function Evaluate(props) {
 
       <div className="col-4">
         <form onSubmit={handleSubmit(onSubmit)}>
-          <h1>Leave a Comment</h1>
-          <label>Comment:</label>
+
+          <label>New Comment:</label>
           <br />
           <input type="text" Name="comment" required {...register('value_name')} />
           <br />
