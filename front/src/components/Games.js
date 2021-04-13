@@ -6,7 +6,6 @@ import {Link, useLocation} from "react-router-dom";
 
 function Games(props) {
     const [search, setGame] = useState("");
-
     const renderGames = () => {
         return props.game
             .filter(
@@ -25,7 +24,7 @@ function Games(props) {
                         <br />
                         Rating: {p.Rating} <br />
                         Type: {p.Type} <br />
-                        <Link to={`/review/${p._id}`}> Check the reviews </Link>
+                        <Link to={`/review/${p._id}`}> Check Comments </Link>
                         <br />
                     </li>
             ));

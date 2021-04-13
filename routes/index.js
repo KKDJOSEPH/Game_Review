@@ -32,10 +32,10 @@ router.post("/new", async (req, res) => {
 });
 
 // eslint-disable-next-line no-unused-vars
-router.post("/comment", async (req, res) => {
+router.post("/comment", async (req) => {
   const id = req.body._id;
   const comment = req.body.comment;
-  const newGame = {"_id": id, "comment": comment};
+  const newGame = {"_id": id, "Comment": comment};
   await myDB.addComment(newGame);
 });
 

@@ -67,18 +67,21 @@ function MyDB() {
     };
 
     myDB.addComment = async (newComment) =>{
+        //const ObjectId = require("mongodb").ObjectId;
+        const id = newComment[0];
+        //const o_id = new ObjectId(id);
         const client = new MongoClient(url, {useUnifiedTopology: true});
         await client.connect();
         const db = client.db(DB_NAME);
-        const ObjectId = require("mongodb").ObjectId;
-        const id = newComment[0];
-        const o_id = new ObjectId(id);
         const games = db.collection("gameInfo");
-        const query = { _id: o_id };
+        console.log("running addcomment");
+        const query = { _id: id };
         const update = {
             $push: {
-                comment: newComment[1],
-            }
+                commentList:{
+                    comment: newComment[1]
+                },
+            },
         };
         games.findOneAndUpdate(query, update);
         console.log(query)

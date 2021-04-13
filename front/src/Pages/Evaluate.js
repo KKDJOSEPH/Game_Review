@@ -21,7 +21,7 @@ function Evaluate(props) {
   const renderGames = () => {
       return(
           <div className="card-deck">
-              <Card style={{ width: "30rem", margin: "5rem" }} key={id}>
+              <Card style={{ width: "30rem", margin: "2rem" }} key={id}>
                   <CardImg
                       top
                       width="100%"
@@ -47,16 +47,16 @@ function Evaluate(props) {
   };
 
   function RevealComments() {
-      console.log("Comments:");
-      return (
-        <div
-          key={currentGame._id}
-        >
-          <div>
-            {currentGame.comment}
-          </div>
-          <hr />
-        </div>
+    console.log("Comments:");
+    return (
+        <ul>
+            {currentGame.commentList.map((comment, index) =>(
+                <div key={index}>
+                    {comment}
+                    <hr />
+                </div>
+            ))}
+        </ul>
     )
   }
 
@@ -72,24 +72,12 @@ function Evaluate(props) {
 
   const onSubmit = async (data) => {
     data["_id"] = currentGame.id;
-    postComment(currentGame.id);
+    postComment(data);
   };
 
   return (
     <div className="row">
       <div className="col-8">
-        {renderGames()}
-        {RevealComments()}
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <h1>Leave a Comment</h1>
-          <label>Comment:</label>
-          <br />
-          <input type="text" name="comment" {...register('value_name')} />
-          <br />
-          <br />
-          <input className="btn btn-success" type="submit" />
-        </form>
-        <br />
         <button
             type="button"
             className="corner btn btn-outline-dark"
@@ -97,8 +85,25 @@ function Evaluate(props) {
           >
             Return To Home
         </button>
+        {renderGames()}
+        <strong>Comments: </strong>
+        <br />
+        <br />
+        {RevealComments()}
+
+      <div className="col-4">
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <h1>Leave a Comment</h1>
+          <label>Comment:</label>
+          <br />
+          <input type="text" Name="comment" required {...register('value_name')} />
+          <br />
+          <br />
+          <input className="btn btn-success" type="submit" />
+        </form>
       </div>
     </div>
+  </div>
   );
 }      
 

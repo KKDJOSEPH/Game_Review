@@ -27,36 +27,37 @@ function NewGame(props) {
   return (
     <div>
       <div className="row">
-        <div className="col-9">
-          <form onSubmit={handleSubmit(onSubmit)}>
-            <h1>Create a New Game</h1>
-            <label>Game Name</label>
-            <br />
-            <input type="text" name="name" {...register('value_name')} />
-            <br />
-            <label>Image URL</label>
-            <br />
-            <input type="number" name="image" {...register('value_name')} />
-            <br />
-            <label>Rating</label>
-            <br />
-            <input type="number" name="rating" {...register('value_name')} />
-            <br />
-            <label>Type</label>
-            <br />
-            <input type="text" name="type" {...register('value_name')} />
-            <br />
-            <br />
-            <input className="btn btn-secondary btn-lg" type="submit" />
-          </form>
-          <br />
-          <button
+        <div className="col-12">
+        <button
             type="button"
             className="corner btn btn-outline-dark"
             onClick={() => history.push("/")}
           >
             Return to Home
           </button>
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <h1>Review a New Game</h1>
+            <label>Game Name</label>
+            <br />
+            <input type="text" name="name" className="form-control" required {...register('value_name')} />
+            <br />
+            <label>Image URL</label>
+            <br />
+            <input type="text" name="image" className="form-control" {...register('value_name')} />
+            <br />
+            <label>Rating</label>
+            <br />
+            <input type="number" name="rating" className="form-control" required {...register('value_name')} />
+            <br />
+            <label>Type</label>
+            <br />
+            <input type="text" name="type" className="form-control" required {...register('value_name')} />
+            <br />
+            <br />
+            <input className="btn btn-primary" type="submit" />
+          </form>
+
+          <br />
         </div>
       </div>
     </div>

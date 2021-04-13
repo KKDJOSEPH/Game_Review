@@ -7,7 +7,7 @@ function Home(props) {
     useEffect(() => {
         const getGame = async () => {
             try {
-                const _game = await fetch("/game").then((res) => res.json());
+                const _game = await fetch("/games").then((res) => res.json());
                 setGames(_game);
             } catch (err) {
                 console.log("error ", err);
