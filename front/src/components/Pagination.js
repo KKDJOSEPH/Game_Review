@@ -1,7 +1,7 @@
-export default function PaginationComponent({ page, onChangePage, total }) {
+function PaginationComponent({ page, onChangePage, total }) {
     let numPages = 6;
     let minPageInRange = Math.max(0, page - numPages / 2);
-    let lastPage = Math.floor(total / 20) - 1;
+    let lastPage = Math.floor(total / 9);
     let maxPageInRange = Math.min(minPageInRange + numPages, lastPage);
   
     const renderPages = () => {
@@ -53,5 +53,6 @@ export default function PaginationComponent({ page, onChangePage, total }) {
         </ul>
       </nav>
     );
-  }
-  
+}
+
+export default PaginationComponent;

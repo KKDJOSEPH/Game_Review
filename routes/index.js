@@ -2,13 +2,29 @@ const express = require("express");
 const router = express.Router();
 const path = require("path");
 const myDB = require("../db/MyDB.js");
- 
+
 /* GET home page. */
 // eslint-disable-next-line no-unused-vars
 router.get("/games", async (req, res) => {
   const games = await myDB.getGames();
   /*console.log(games);*/
   await res.json(games);
+});
+
+router.post("/games", async (req, res) => {
+  try {
+    console.log(req.body);
+    const nPerPage = 9;
+    const page = +req.body.page || 0;
+    const dbRes = await myDB.getGames(req.body);
+    res.send({
+      games: dbRes.slice(page * nPerPage, (page + 1) * nPerPage),
+      total: dbRes.length,
+    });
+  } catch (e) {
+    console.log("Error", e);
+    res.status(400).send({ err: e });
+  }
 });
 
 router.get("*", (req, res) =>

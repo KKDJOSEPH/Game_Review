@@ -6,9 +6,7 @@ body {
   padding: 0px;
   overflow: auto;
   background-color: #decdbe;
-
 }
-
 
 section {
   position: relative;
@@ -152,12 +150,14 @@ h1 {
   z-index: 20;
 }
 
-.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
   color: #000; /*Sets the text hover color on navbar*/
 }
 
-.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active >
-a:hover, .navbar-default .navbar-nav > .active > a:focus {
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
   color: white; /*BACKGROUND color for active*/
   background-color: #030033;
 }
@@ -171,7 +171,7 @@ a:hover, .navbar-default .navbar-nav > .active > a:focus {
 .dropdown-menu > li > a:focus {
   color: #262626;
   text-decoration: none;
-  background-color: #66CCFF; /*change color of links in drop down here*/
+  background-color: #66ccff; /*change color of links in drop down here*/
 }
 
 .nav > li > a:hover,
@@ -182,4 +182,8 @@ a:hover, .navbar-default .navbar-nav > .active > a:focus {
 
 .navbar-default .navbar-nav > li > a {
   color: white; /*Change active text color here*/
+}
+
+.Pagination {
+  display: flex;
 }

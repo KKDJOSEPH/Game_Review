@@ -38,6 +38,8 @@ function Evaluate(props) {
                       </CardTitle>
                       <CardSubtitle>
                           <span className="type">Type: {currentGame.Type}</span>
+                          <br />
+                          <span className="rating">Rating: {currentGame.Rating}</span>
                       </CardSubtitle>
                   </CardBody>
               </Card>
@@ -77,7 +79,7 @@ function Evaluate(props) {
 
   return (
     <div className="row">
-      <div className="col-8">
+      <div className="col-12">
         <button
             type="button"
             className="corner btn btn-outline-dark"
@@ -90,20 +92,16 @@ function Evaluate(props) {
         <br />
         <br />
         {RevealComments()}
-
-      <div className="col-4">
         <form onSubmit={handleSubmit(onSubmit)}>
-
           <label>New Comment:</label>
           <br />
-          <input type="text" Name="comment" required {...register('value_name')} />
+          <input type="text" className="form-control" Name="comment" required {...register('value_name')} />
           <br />
           <br />
           <input className="btn btn-success" type="submit" />
         </form>
       </div>
     </div>
-  </div>
   );
 }      
 

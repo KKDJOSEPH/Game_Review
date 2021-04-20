@@ -36,6 +36,8 @@ function Review(props) {
                         </CardTitle>
                         <CardSubtitle>
                             <span className="type">Type: {currentGame.Type}</span>
+                            <br />
+                            <span className="rating">Rating: {currentGame.Rating}</span>
                         </CardSubtitle>
                     </CardBody>
                 </Card>
