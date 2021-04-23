@@ -31,6 +31,7 @@ function Games(props) {
     };
 
     const location = useLocation();
+
     return (
         <div className="col">
             <nav className="navbar sticky-top navbar-expand-lg navbar-light bg-light">

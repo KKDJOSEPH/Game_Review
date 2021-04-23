@@ -48,6 +48,7 @@ function Evaluate(props) {
 
   };
 
+
   function RevealComments() {
     console.log("Comments:");
     return (

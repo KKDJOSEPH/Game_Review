@@ -14,6 +14,7 @@ function Games_Signin(props) {
                     (p.Type && p.Type.toLowerCase().startsWith(search.toLowerCase())) || (p.Name && p.Name.toLowerCase().startsWith(search.toLowerCase()))
             )
             .map((p) => (
+            // might be better if you split each game as another component
                 <li key={p._id} className="Game-li">
                     {p.Name} (#{p._id}) <br />
                     <img
@@ -35,7 +36,6 @@ function Games_Signin(props) {
                 </li>
             ));
     };
-
 
     return (
         <div className="col">
