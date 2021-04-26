@@ -2,32 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="227d21c0-cf6c-4f97-b193-9cecd2b76b1b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/front/src/Pages/newHome.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front/src/css/newHome.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front/src/ringfit.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/front/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/front/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/public/logo192.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/Pages/Evaluate.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/Pages/Evaluate.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/src/Pages/Game_in.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/Pages/Game_in.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/src/Pages/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/Pages/home.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/src/Pages/signin.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/Pages/signin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/Pages/signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/Pages/signup.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/src/components/Game_Signin.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/Game_Signin.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/src/components/Games.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/Games.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/src/components/Pagination.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/Pagination.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/components/navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/navbar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/css/Evaluate.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/css/Evaluate.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/src/css/Game.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/css/Game.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/src/css/SignIn.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/css/SignIn.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/src/css/SignUp.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/css/SignUp.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/css/newHome.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/css/newHome.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/src/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,19 +55,19 @@
     <property name="nodejs_package_manager_path" value="yarn" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Desktop_D\CS5610 Web Dev\Project_3\Game_Review\front\src" />
-      <recent name="D:\Desktop_D\CS5610 Web Dev\Project_3\Game_Review\front\src\components" />
-      <recent name="D:\Desktop_D\CS5610 Web Dev\Project_3\Game_Review\front\src\image" />
-      <recent name="D:\Desktop_D\CS5610 Web Dev\Project_3\Game_Review\auth" />
-      <recent name="D:\Desktop_D\CS5610 Web Dev\Project_3\Game_Review" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Desktop_D\CS5610 Web Dev\Project_3\Game_Review\front\src\Pages" />
       <recent name="D:\Desktop_D\CS5610 Web Dev\Project_3\Game_Review\front\src\css" />
       <recent name="D:\Desktop_D\CS5610 Web Dev\Project_3\Game_Review\front\public" />
       <recent name="D:\Desktop_D\CS5610 Web Dev\Project_3\Game_Review\front\src\components" />
       <recent name="D:\Desktop_D\CS5610 Web Dev\Project_3\Game_Review\front\src\image" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Desktop_D\CS5610 Web Dev\Project_3\Game_Review\front\src" />
+      <recent name="D:\Desktop_D\CS5610 Web Dev\Project_3\Game_Review\front\src\components" />
+      <recent name="D:\Desktop_D\CS5610 Web Dev\Project_3\Game_Review\front\src\image" />
+      <recent name="D:\Desktop_D\CS5610 Web Dev\Project_3\Game_Review\auth" />
+      <recent name="D:\Desktop_D\CS5610 Web Dev\Project_3\Game_Review" />
     </key>
   </component>
   <component name="RunAnythingCache">

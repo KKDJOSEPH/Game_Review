@@ -31,7 +31,7 @@ function Game_in() {
     console.log("Render Homepage...");
     return (
         <div className="App">
-            <div className="main">
+            <div className="main" role="main">
                 <GamesSignin  game={games}/>
                 <PaginationComponent
                     total={total}

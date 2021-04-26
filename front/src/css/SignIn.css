@@ -42,3 +42,19 @@ a {
   font-family: "Roboto", sans-serif;
   color: red;
 }
+
+.btn {
+  background-color: black;
+  color: ghostwhite;
+}
+
+.btn:hover{
+  background-color: red;
+  color: ghostwhite;
+}
+
+.signIcon{
+  margin-left: 95px;
+}
+
+

@@ -1,13 +1,15 @@
 import React from "react";
 import "../css/SignIn.css";
 import { Link } from "react-router-dom";
+import NavigationComponent from "../components/navbar";
 
 function SignIn() {
     const urlParams = new URLSearchParams(window.location.search);
     const error = urlParams.get("error");
     return (
         <div className="bg">
-            <div className="container-fluid d-flex justify-content-center">
+            <NavigationComponent/>
+            <div className="container-fluid d-flex justify-content-center" role="main">
                 <div className="signcard">
                     <div className="card-header">
                         <h3>Sign In</h3>
@@ -15,6 +17,13 @@ function SignIn() {
                     <div className="card-body">
                         {error ? <div className="alert alert-danger alert-dismissible fade show" role="alert">{error}</div> : ""}
                         <form action="/test/signin" method="POST">
+
+                            <img className="signIcon"
+                                src="./game_icon4.png"
+                                alt="game_icon"
+                                width="70"
+                                height="70"
+                            />
                             <div className="form-group">
                                 <label htmlFor="userName">Username</label>
                                 <input
@@ -36,19 +45,14 @@ function SignIn() {
                                 />
                             </div>
 
-                            <div className="form-group">
+                            <h2 className="form-group">
                                 <input
                                     type="submit"
                                     className="btn btn-dark"
                                     style={{ marginTop: "10px" }}
                                     value="Sign In"
                                 />
-                            </div>
-                            <div className="form-group">
-                                Not an user? <Link to="/signup">Sign up here</Link>
-                                <br/>
-                                <Link to="/home">Cancel and return home</Link>
-                            </div>
+                            </h2>
                         </form>
                     </div>
                 </div>

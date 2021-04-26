@@ -66,6 +66,13 @@ body {
     opacity: 1;
 }
 
+.nav-item:hover{
+    color: red;
+}
+
+.nav-item:active{
+    color: red;
+}
 
 .head {
     background-color: white;
@@ -92,6 +99,7 @@ body {
     color: ghostwhite;
     font-size: 20px;
     z-index: 100;
+    border-radius: 8px;
 }
 
 .main_btn:hover {

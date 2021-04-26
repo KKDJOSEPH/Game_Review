@@ -14,12 +14,14 @@
     font-family: museo-sans, sans-serif;
     font-size: 25px;
     font-weight: 700;
+    z-index: 99;
 }
 
 .Game_Info {
     color: black;
     font-family: museo-sans, sans-serif;
     font-size: 15px;
+    z-index: 99;
 }
 
 .Game_Info2 {
@@ -34,11 +36,26 @@
     opacity: 1;
 }
 
-.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+nav > li > a:hover{
     color: red; /*Sets the text hover color on navbar*/
 }
 
 .nav-item {
     color: black;
     font-family: sans-serif;
+}
+
+.main_btn:hover{
+    background-color: red;
+    color: ghostwhite;
+}
+
+.main_btn:focus{
+    background-color: red;
+    color: ghostwhite;
+}
+
+.main_btn:active{
+    background-color: red;
+    color: ghostwhite;
 }

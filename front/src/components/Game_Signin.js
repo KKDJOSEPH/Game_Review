@@ -33,9 +33,9 @@ function GamesSignin(props) {
                             title={`${p.Name} (#${p._id})`}
                         />{" "}
                     </Link>
-                    <div className= "Game_Name">
+                    <h1 className= "Game_Name">
                         {p.Name}
-                    </div>
+                    </h1>
                     <br />
                     <div className= "Game_Info">
                         Platform: {Platform(p.Platform1)} {Platform(p.Platform2)}<br />

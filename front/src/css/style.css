@@ -35,6 +35,30 @@ body {
   display: inline-flex;
 }
 
+.main_btn {
+  float: right;
+  background-color: black;
+  color: ghostwhite;
+  font-size: 20px;
+  z-index: 100;
+  border-radius: 8px;
+}
+
+.main_btn:hover{
+  background-color: red;
+  color: ghostwhite;
+}
+
+.main_btn:focus{
+  background-color: red;
+  color: ghostwhite;
+}
+
+.main_btn:active{
+  background-color: red;
+  color: ghostwhite;
+}
+
 section {
   position: relative;
   width: 100%;
@@ -56,23 +80,6 @@ section {
   top: 0;
 }
 
-.button {
-  margin: 2px;
-  float: left;
-  color: black;
-  background: linear-gradient(to bottom, #faf9de 100%, #091b66 2%);
-  background-color: #decdbe;
-  border: 1px solid #54381e;
-  cursor: pointer;
-  font-size: 14px;
-  padding: 10px 24px;
-  text-decoration: none;
-}
-
-.button:hover {
-  background: linear-gradient(to bottom, #fad8be 5%, #cbf5fb 100%);
-  background-color: #0e4b4d;
-}
 
 .main {
   color: #3c240f;

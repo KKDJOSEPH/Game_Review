@@ -31,7 +31,7 @@ function Home(props) {
     console.log("Render Homepage...");
     return (
         <div className="App">
-            <div className="main">
+            <div className="main" role="main">
                 <Games  game={games}/>
                 <PaginationComponent
                     total={total}

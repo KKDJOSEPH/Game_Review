@@ -13,7 +13,7 @@ function PaginationComponent({ page, onChangePage, total }) {
             key={"page" + i}
             className={"page-item" + (page === i ? " active" : "")}
           >
-            <button className="page-link" onClick={() => onChangePage(i)}>
+            <button className="main_btn page-link" onClick={() => onChangePage(i)}>
               {i}
             </button>
           </li>
@@ -27,12 +27,12 @@ function PaginationComponent({ page, onChangePage, total }) {
         <div className="footer">
             <ul className="Pagination nav nav-pills">
               <li className="nav-item">
-                <button className="page-link" onClick={() => onChangePage(0)}>
+                <button className="main_btn page-link" onClick={() => onChangePage(0)}>
                   First
                 </button>
               </li>
               <li className="nav-item">
-                <button className="page-link" onClick={() => onChangePage(page - 1)}>
+                <button className="main_btn page-link" onClick={() => onChangePage(page - 1)}>
                   Previous
                 </button>
               </li>
@@ -40,13 +40,13 @@ function PaginationComponent({ page, onChangePage, total }) {
               {renderPages()}
 
               <li className="nav-item">
-                <button className="page-link" onClick={() => onChangePage(page + 1)}>
+                <button className="main_btn page-link" onClick={() => onChangePage(page + 1)}>
                   Next
                 </button>
               </li>
 
               <li className="nav-item">
-                <button className="page-link" onClick={() => onChangePage(lastPage)}>
+                <button className="main_btn page-link" onClick={() => onChangePage(lastPage)}>
                   Last ({lastPage})
                 </button>
               </li>

@@ -2,8 +2,8 @@ html,
 body {
   height: 100%;
   width: 100%;
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
   overflow: auto;
 }
 
@@ -41,4 +41,22 @@ body {
 a {
   font-family: "Roboto", sans-serif;
   color: red;
+}
+
+.btn {
+  background-color: black;
+  color: ghostwhite;
+}
+
+.btn:hover{
+  background-color: red;
+  color: ghostwhite;
+}
+
+.signIcon{
+  margin-left: 95px;
+}
+
+.form-group{
+  margin-top: 5px;
 }
