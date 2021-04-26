@@ -5,6 +5,13 @@ body {
   margin: 0px;
   padding: 0px;
   overflow: auto;
+  font-family: museo-sans, sans-serif;
+}
+
+.signHead {
+  font-size: 28px;
+  display: inline;
+  margin: 0 0 0 0;
 }
 
 .navbar {

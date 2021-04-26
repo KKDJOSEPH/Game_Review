@@ -12,7 +12,7 @@ function SignIn() {
             <div className="container-fluid d-flex justify-content-center" role="main">
                 <div className="signcard">
                     <div className="card-header">
-                        <h3>Sign In</h3>
+                        <h1 className="signHead">Sign In</h1>
                     </div>
                     <div className="card-body">
                         {error ? <div className="alert alert-danger alert-dismissible fade show" role="alert">{error}</div> : ""}
