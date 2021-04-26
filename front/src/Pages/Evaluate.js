@@ -95,7 +95,7 @@ function Evaluate(props) {
         <form onSubmit={handleSubmit(onSubmit)}>
           <label>New Comment:</label>
           <br />
-          <input type="text" className="form-control" Name="comment" required {...register('value_name')} />
+          <input type="text" className="form-control" name="comment" required {...register('value_name')} />
           <br />
           <br />
           <input className="btn btn-success" type="submit" />

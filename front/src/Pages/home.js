@@ -31,14 +31,13 @@ function Home(props) {
     console.log("Render Homepage...");
     return (
         <div className="App">
-            <Games  game={games}/>
-            <br />
-            <div className="Pagination">
+            <div className="main">
+                <Games  game={games}/>
                 <PaginationComponent
                     total={total}
                     page={page}
                     onChangePage={setPage}
-                ></PaginationComponent>
+                />
             </div>
         </div>
     );

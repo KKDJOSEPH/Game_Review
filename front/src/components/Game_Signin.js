@@ -1,12 +1,22 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import StarRating from "./Star";
 import {Link, useLocation} from "react-router-dom";
 import "../css/Game.css";
+import { Icon } from '@iconify/react';
+import playstationIcon from '@iconify-icons/cib/playstation';
+import nintendoSwitch from '@iconify-icons/mdi/nintendo-switch';
+import pcIcon from '@iconify-icons/ls/pc';
+import mobileDevice from '@iconify-icons/akar-icons/mobile-device';
+import StarRatings from 'react-star-ratings';
 
-function Games_Signin(props) {
+function Platform(platform) {
+    if(platform === "Switch") return <Icon icon={nintendoSwitch} />;
+    if(platform === "PC") return <Icon icon={pcIcon} />;
+    if(platform === "PS4") return <Icon icon={playstationIcon} />;
+    if(platform === "Mobile") return <Icon icon={mobileDevice} />;
+}
+function GamesSignin(props) {
     const [search, setGame] = useState("");
-    const location = useLocation();
     const renderGames = () => {
         return props.game
             .filter(
@@ -15,35 +25,44 @@ function Games_Signin(props) {
             )
             .map((p) => (
                 <li key={p._id} className="Game-li">
-                    {p.Name} (#{p._id}) <br />
-                    <img
-                        className="Game-img card-img-top"
-                        src={`../image/${p._id}.jpg`}
-                        alt={`${p.Name} (#${p._id})`}
-                        title={`${p.Name} (#${p._id})`}
-                    />{" "}
-                    <br />
-                    Type: {p.Type} <br />
-                    <div>
-                        <label htmlFor="position">
-                            Rate this game: {" "}
-                            <StarRating name = "position"/>
-                        </label>
+                    <Link to={`/evaluate/${p._id}`}>
+                        <img
+                            className="Game-img card-img-top"
+                            src={`../image/${p._id}.jpg`}
+                            alt={`${p.Name} (#${p._id})`}
+                            title={`${p.Name} (#${p._id})`}
+                        />{" "}
+                    </Link>
+                    <div className= "Game_Name">
+                        {p.Name}
                     </div>
-                    <Link to={`/evaluate/${p._id}`}> Evaluate this game </Link>
                     <br />
+                    <div className= "Game_Info">
+                        Platform: {Platform(p.Platform1)} {Platform(p.Platform2)}<br />
+                        Type: {p.Type}
+                        <span className="Game_Info2">
+                            <StarRatings
+                                numberOfStars={5}
+                                rating= {parseInt(p.Rating)}
+                                starDimension="18px"
+                                starEmptyColor='grey'
+                                starRatedColor={'rgb(243,69,67)'}
+                                starSpacing="0"
+                            />
+                        </span>
+                    </div>
                 </li>
             ));
     };
 
-
+    const location = useLocation();
     return (
         <div className="col">
-            <nav className="navbar sticky-top navbar-expand-lg navbar-light bg-light">
-                &nbsp; &nbsp; &nbsp;
+            <nav className="navbar sticky-top navbar-expand-lg navbar-light" role="navigation">
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                 <Link className="navbar-brand" to="/">
                     <img
-                        src="./game_icon.png"
+                        src="./game_icon4.png"
                         alt="game_icon"
                         width="50"
                         height="50"
@@ -74,6 +93,18 @@ function Games_Signin(props) {
                                 to="/"
                             >
                                 Home
+                            </Link>
+                        </li>
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        <li className="nav-item">
+                            <Link
+                                className={
+                                    "nav-link" + (location.pathname === "/home" ? " active" : "")
+                                }
+                                aria-current="page"
+                                to="/home"
+                            >
+                                Games
                             </Link>
                         </li>
                         &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
@@ -128,8 +159,8 @@ function Games_Signin(props) {
     );
 }
 
-Games_Signin.propTypes = {
+GamesSignin.propTypes = {
     game: PropTypes.array,
 };
 
-export default Games_Signin;
+export default GamesSignin;

@@ -1,0 +1,136 @@
+body {
+    font-family: museo-sans, sans-serif;
+    background-color: white;
+}
+
+.pokemon {
+    display: flex;
+    justify-content: center;
+    border-bottom: solid darkgrey;
+    border-bottom-width: thin;
+}
+
+.pokemon > .Game-ol .Game-li{
+    columns: 1;
+    width: 45%;
+    list-style-position: inside;
+    margin: 10px;
+    font-family: sans-serif;
+    background-color: #ffffff;
+    color: #ffffff;
+}
+
+.pokemon > .Game_Name {
+    color: red;
+    font-family: museo-sans, sans-serif;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.pokemon > .Game_Info {
+    color: #484848;
+    font-family: museo-sans, sans-serif;
+    font-size: 15px;
+}
+
+.pokemon > .Game_Info2 {
+    float: right;
+}
+
+.head_text {
+    float: left;
+    color: #484848;
+    font-family: museo-sans, sans-serif;
+    font-size: 1.75rem;
+    line-height: 1.36;
+    font-weight: 900;
+    z-index: 60;
+}
+
+.pokemon_text {
+    left: 0;
+    float: left;
+    color: #484848;
+    font-family: museo-sans, sans-serif;
+    font-size: 1.75rem;
+    line-height: 1.36;
+    font-weight: 900;
+    z-index: 100;
+}
+.navbar {
+    text-align: center;
+    background-color: white;
+    border-bottom: solid darkgrey;
+    border-bottom-width: thin;
+    z-index: 99;
+    opacity: 1;
+}
+
+
+.head {
+    background-color: white;
+    position: center;
+    font-size: 30px;
+    border-bottom: solid darkgrey;
+    border-bottom-width: thin;
+}
+
+.Switch {
+    background-color: white;
+    position: center;
+    font-size: 30px;
+}
+
+.bottom {
+    border-bottom: solid darkgrey;
+    border-bottom-width: thin;
+}
+
+.main_btn {
+    float: right;
+    background-color: black;
+    color: ghostwhite;
+    font-size: 20px;
+    z-index: 100;
+}
+
+.main_btn:hover {
+    background-color: red; /* Green */
+    color: ghostwhite;
+}
+.hard_core {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    border-bottom: solid darkgrey;
+    border-bottom-width: thin;
+}
+
+.hard_core > .Game-ol .Game-li{
+
+    columns: 1;
+    width: 31%;
+    list-style-position: inside;
+    margin: 10px;
+    font-family: sans-serif;
+    background-color: #ffffff;
+    color: #ffffff;
+}
+
+.hard_core > .Game_Name {
+    background-color: white;
+    color: red;
+    font-family: museo-sans, sans-serif;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.hard_core > .Game_Info {
+    color: black;
+    font-family: museo-sans, sans-serif;
+    font-size: 15px;
+}
+
+.hard_core > .Game_Info2 {
+    float: right;
+}

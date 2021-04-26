@@ -4,11 +4,12 @@ function NavigationComponent() {
     console.log("Render NavigationComponent", location);
 
     return (
-        <nav className="navbar sticky-top navbar-expand-lg navbar-light bg-light">
-            &nbsp; &nbsp; &nbsp;
+        <nav className="navbar sticky-top navbar-expand-lg navbar-light" role="navigation">
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                 <Link className="navbar-brand" to="/">
                     <img
-                        src="./game_icon.png"
+                        src="./game_icon4.png"
                         alt="game_icon"
                         width="50"
                         height="50"
@@ -39,6 +40,18 @@ function NavigationComponent() {
                                 to="/"
                             >
                                 Home
+                            </Link>
+                        </li>
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        <li className="nav-item">
+                            <Link
+                                className={
+                                    "nav-link" + (location.pathname === "/home" ? " active" : "")
+                                }
+                                aria-current="page"
+                                to="/home"
+                            >
+                                Games
                             </Link>
                         </li>
                         &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;

@@ -47,7 +47,7 @@ function SignIn() {
                             <div className="form-group">
                                 Not an user? <Link to="/signup">Sign up here</Link>
                                 <br/>
-                                <Link to="/">Cancel and return home</Link>
+                                <Link to="/home">Cancel and return home</Link>
                             </div>
                         </form>
                     </div>

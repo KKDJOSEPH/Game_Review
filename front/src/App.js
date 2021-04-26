@@ -7,6 +7,7 @@ import NewGame from "./Pages/newgame.js";
 import Game_in from "./Pages/Game_in";
 import Review from "./Pages/Review";
 import Evaluate from "./Pages/Evaluate";
+import NewHome from "./Pages/newHome";
 
 
 function App() {
@@ -34,7 +35,8 @@ function App() {
           <Router>
 
               <Switch>
-                  <Route exact path="/" component={Home} />
+                  <Route exact path="/" component={() => <NewHome game={games}/>} />
+                  <Route path="/home" component={Home} />
                   <Route path="/signup" component={SignUp} />
                   <Route path="/signin" component={SignIn} />
                   <Route path="/newgame" component={NewGame} />

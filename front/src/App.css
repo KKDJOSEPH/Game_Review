@@ -1,0 +1,7 @@
+.navbar {
+    background-color: white;
+    border-bottom: solid darkgrey;
+    border-bottom-width: thin;
+    z-index: 99;
+    opacity: 1;
+}

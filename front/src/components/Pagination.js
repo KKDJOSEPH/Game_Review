@@ -24,34 +24,34 @@ function PaginationComponent({ page, onChangePage, total }) {
     };
   
     return (
-      <nav aria-label="Page navigation example">
-        <ul className="Pagination">
-          <li className="page-item">
-            <button className="page-link" onClick={() => onChangePage(0)}>
-              First
-            </button>
-          </li>
-          <li className="page-item">
-            <button className="page-link" onClick={() => onChangePage(page - 1)}>
-              Previous
-            </button>
-          </li>
-  
-          {renderPages()}
-  
-          <li className="page-item">
-            <button className="page-link" onClick={() => onChangePage(page + 1)}>
-              Next
-            </button>
-          </li>
-  
-          <li className="page-item">
-            <button className="page-link" onClick={() => onChangePage(lastPage)}>
-              Last ({lastPage})
-            </button>
-          </li>
-        </ul>
-      </nav>
+        <div className="footer">
+            <ul className="Pagination nav nav-pills">
+              <li className="nav-item">
+                <button className="page-link" onClick={() => onChangePage(0)}>
+                  First
+                </button>
+              </li>
+              <li className="nav-item">
+                <button className="page-link" onClick={() => onChangePage(page - 1)}>
+                  Previous
+                </button>
+              </li>
+
+              {renderPages()}
+
+              <li className="nav-item">
+                <button className="page-link" onClick={() => onChangePage(page + 1)}>
+                  Next
+                </button>
+              </li>
+
+              <li className="nav-item">
+                <button className="page-link" onClick={() => onChangePage(lastPage)}>
+                  Last ({lastPage})
+                </button>
+              </li>
+            </ul>
+        </div>
     );
 }
 

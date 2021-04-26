@@ -7,17 +7,13 @@ body {
   overflow: auto;
 }
 
-/*.bg {
-  height: 100%;
-  width: 100%;
-  margin: 0px;
-  padding: 0px;
-  overflow: auto;
-  background-size: 100% 100%;
-  background: url(../image/background.jpg) no-repeat center center;
-  background-blend-mode: soft-light;
-  z-index: -1;
-}*/
+.navbar {
+  background-color: white;
+  border-bottom: solid darkgrey;
+  border-bottom-width: thin;
+  z-index: 99;
+  opacity: 1;
+}
 
 .signcard {
   background-color: #faf9de;
@@ -44,5 +40,5 @@ body {
 
 a {
   font-family: "Roboto", sans-serif;
-  color: brown;
+  color: red;
 }

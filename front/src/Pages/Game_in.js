@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../css/style.css"
-import Games_Signin from "../components/Game_Signin";
+import GamesSignin from "../components/Game_Signin";
 import PaginationComponent from "../components/Pagination";
-
 
 function Game_in() {
     let [games, setGames] = useState([]);
@@ -32,14 +31,13 @@ function Game_in() {
     console.log("Render Homepage...");
     return (
         <div className="App">
-            <Games_Signin  game={games}/>
-            <br />
-            <div className="Pagination">
+            <div className="main">
+                <GamesSignin  game={games}/>
                 <PaginationComponent
                     total={total}
                     page={page}
                     onChangePage={setPage}
-                ></PaginationComponent>
+                />
             </div>
         </div>
     );

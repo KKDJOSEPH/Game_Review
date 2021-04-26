@@ -5,38 +5,40 @@
     list-style-position: inside;
     margin: 5px;
     font-family: sans-serif;
+    background-color: #ffffff;
+    color: #ffffff;
+}
+
+.Game_Name {
+    color: red;
+    font-family: museo-sans, sans-serif;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.Game_Info {
+    color: black;
+    font-family: museo-sans, sans-serif;
+    font-size: 15px;
+}
+
+.Game_Info2 {
+    float: right;
+}
+
+.navbar {
+    background-color: white;
+    border-bottom: solid darkgrey;
+    border-bottom-width: thin;
+    z-index: 99;
+    opacity: 1;
 }
 
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-    color: #000; /*Sets the text hover color on navbar*/
+    color: red; /*Sets the text hover color on navbar*/
 }
 
-.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active >
-a:hover, .navbar-default .navbar-nav > .active > a:focus {
-    color: white; /*BACKGROUND color for active*/
-    background-color: #030033;
-}
-
-.navbar-default {
-    background-color: #0f006f;
-    border-color: #030033;
-}
-
-.dropdown-menu > li > a:hover,
-.dropdown-menu > li > a:focus {
-    color: #262626;
-    text-decoration: none;
-    background-color: #66CCFF; /*change color of links in drop down here*/
-}
-
-.nav > li > a:hover,
-.nav > li > a:focus {
-    text-decoration: none;
-    background-color: silver; /*Change rollover cell color here*/
-}
 .nav-item {
+    color: black;
     font-family: sans-serif;
-}
-.navbar-default .navbar-nav > li > a {
-    color: white; /*Change active text color here*/
 }
