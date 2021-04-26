@@ -7,6 +7,12 @@ body {
   overflow: auto;
 }
 
+.signHead {
+  font-size: 28px;
+  display: inline;
+  margin: 0 0 0 0;
+}
+
 .navbar {
   background-color: white;
   border-bottom: solid darkgrey;
