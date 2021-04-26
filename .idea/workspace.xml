@@ -2,19 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="227d21c0-cf6c-4f97-b193-9cecd2b76b1b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/Pages/Game_in.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/Pages/Game_in.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/Pages/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/Pages/home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/Pages/signin.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/Pages/signin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/Pages/signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/Pages/signup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/components/Game_Signin.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/Game_Signin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/components/Games.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/Games.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/components/Pagination.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/Pagination.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/css/Game.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/css/Game.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/css/SignIn.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/css/SignIn.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/css/SignUp.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/css/SignUp.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/css/newHome.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/css/newHome.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/public/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
