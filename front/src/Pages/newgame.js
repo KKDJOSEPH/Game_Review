@@ -2,6 +2,7 @@ import React from "react";
 import { useHistory } from "react-router";
 import { useForm } from "react-hook-form";
 import "../css/Evaluate.css";
+import NavigationComponent from "../components/navbar";
 
 function NewGame(props) {
   const history = useHistory();
@@ -26,18 +27,19 @@ function NewGame(props) {
   
   return (
     <main>
-    <div>
+    <div className="App">
+      <NavigationComponent/>
       <div className="row">
         <div className="col-12">
-        <button
+        {/* <button
             type="button"
             className="corner btn btn-outline-dark"
             onClick={() => history.push("/")}
           >
             Return to Home
-          </button>
+          </button> */}
           <form onSubmit={handleSubmit(onSubmit)}>
-            <h1>Add a New Game</h1>
+            <h1><strong>Add a New Game</strong></h1>
             <label><strong>Game Name</strong></label>
             <br />
             <input type="text" name="name" className="form-control" required {...register('value_name')} id="name" placeholder="e.g. Super Mario"/>

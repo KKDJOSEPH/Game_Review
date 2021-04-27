@@ -34,9 +34,9 @@ canvas {
 }
 
 p {
-  font-size: 4.5vh;
-  width: 60%;
-  padding: 10px;
+  font-size: 3.5vh;
+  width: 100%;
+  /* padding: 10px; */
   margin: 3rem;
 }
 
@@ -71,4 +71,9 @@ h1 {
   display: block;
   word-break: keep-all; /* 不换行 */
   white-space: nowrap;
+}
+
+.card-deck {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }

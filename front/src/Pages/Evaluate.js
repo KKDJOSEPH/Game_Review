@@ -3,8 +3,15 @@ import { useForm } from "react-hook-form";
 import { useState , useEffect } from "react";
 import "../css/Evaluate.css";
 import PaginationComponent from "../components/Pagination";
+import NavigationComponent from "../components/navbar";
+import StarRatings from "react-star-ratings";
+import { Icon } from '@iconify/react';
+import playstationIcon from '@iconify-icons/cib/playstation';
+import nintendoSwitch from '@iconify-icons/mdi/nintendo-switch';
+import pcIcon from '@iconify-icons/ls/pc';
+import mobileDevice from '@iconify-icons/akar-icons/mobile-device';
 
-import {
+import {  
   Card,
   CardImg,
   CardTitle,
@@ -22,6 +29,13 @@ function Evaluate(props) {
   let [comments, setComments] = useState([])
   let [page, setPage] = useState(0);
   let [total, setTotal] = useState(0);
+
+  function Platform(platform) {
+    if(platform === "Switch") return <Icon icon={nintendoSwitch} />;
+    if(platform === "PC") return <Icon icon={pcIcon} />;
+    if(platform === "PS4") return <Icon icon={playstationIcon} />;
+    if(platform === "Mobile") return <Icon icon={mobileDevice} />;
+  }
 
   useEffect(() => {
     const fetchComments = async () => {
@@ -45,8 +59,9 @@ function Evaluate(props) {
 
   const renderGames = () => {
       return(
+        <div className="bg">
           <div className="card-deck">
-              <Card style={{ width: "30rem", margin: "2rem" }} key={id}>
+              <Card style={{ width: "26rem", margin: "auto" }} key={id}>
                   <CardImg
                       top
                       width="100%"
@@ -62,13 +77,26 @@ function Evaluate(props) {
                           </strong>
                       </CardTitle>
                       <CardSubtitle>
-                          <span className="type">Type: {currentGame.Type}</span>
-                          <br />
-                          <span className="rating">Rating: {currentGame.Rating}</span>
+                          <span className="type"><strong>Type: {currentGame.Type}</strong></span>
+                            <br />
+                            <span className="rating"><strong>Rating: {currentGame.Rating}</strong></span>
+                            <br />
+                            <span><strong>Platform: {Platform(currentGame.Platform1)} {Platform(currentGame.Platform2)}</strong></span>
+                          <span className="Game_Info2">
+                            <StarRatings
+                                numberOfStars={5}
+                                rating= {parseInt(currentGame.Rating)}
+                                starDimension="18px"
+                                starEmptyColor='grey'
+                                starRatedColor={'red'}
+                                starSpacing="0"
+                            />
+                          </span>
                       </CardSubtitle>
                   </CardBody>
               </Card>
           </div>
+        </div>
       )
 
   };
@@ -104,16 +132,18 @@ function Evaluate(props) {
 
   return (
     <main>
-    <div className="row">
+    <div className="App">
+      <NavigationComponent/>
+      {/* <div className="row"> */}
       <div className="col-12">
-        <button
+        {/* <button
             type="button"
             className="corner btn btn-outline-dark"
             onClick={() => history.push("/Game_in")}
           >
             Return To Home
-        </button>
-        <h1>Want to say something about this game?</h1>
+        </button> */}
+        {/* <h1>Want to say something about this game?</h1> */}
         {renderGames()}
         <strong>Existing Comments: </strong>
         <br />
@@ -135,6 +165,7 @@ function Evaluate(props) {
           <input className="btn btn-success" type="submit" />
         </form>
       </div>
+      {/* </div> */}
     </div>
     </main>
   );

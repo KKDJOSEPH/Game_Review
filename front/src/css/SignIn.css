@@ -55,13 +55,11 @@ a {
   color: ghostwhite;
 }
 
-.btn:hover{
+.btn:hover {
   background-color: red;
   color: ghostwhite;
 }
 
-.signIcon{
+.signIcon {
   margin-left: 95px;
 }
-
-

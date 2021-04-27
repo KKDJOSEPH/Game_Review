@@ -91,7 +91,7 @@ function NewHome(props) {
                             <button
                                 className=" main_btn btn btn-primary"
                             >
-                                Learn more >
+                                Learn more {">"}
                             </button>
                         </Link>
                         <br/>
@@ -126,7 +126,7 @@ function NewHome(props) {
                             <button
                                 className=" main_btn btn btn-primary"
                             >
-                                Starting at $199.99 MSRP* >
+                                Starting at $199.99 MSRP* {">"}
                             </button>
                         </Link>
                         <br/>
