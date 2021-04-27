@@ -25,6 +25,7 @@ function NewGame(props) {
   };
   
   return (
+    <main>
     <div>
       <div className="row">
         <div className="col-12">
@@ -37,21 +38,21 @@ function NewGame(props) {
           </button>
           <form onSubmit={handleSubmit(onSubmit)}>
             <h1>Add a New Game</h1>
-            <label>Game Name</label>
+            <label><strong>Game Name</strong></label>
             <br />
-            <input type="text" name="name" className="form-control" required {...register('value_name')} />
+            <input type="text" name="name" className="form-control" required {...register('value_name')} id="name" placeholder="e.g. Super Mario"/>
             <br />
-            <label>Image URL</label>
+            <label><strong>Image URL</strong></label>
             <br />
-            <input type="text" name="image" className="form-control" {...register('value_name')} />
+            <input type="text" name="image" className="form-control" {...register('value_name')} placeholder="A valid url directed to the image"/>
             <br />
-            <label>Rating</label>
+            <label><strong>Rating</strong></label>
             <br />
-            <input type="number" name="rating" className="form-control" required {...register('value_name')} />
+            <input type="number" name="rating" className="form-control" required {...register('value_name')} max="5" placeholder="Enter a number from 1-Disappointing to 5-Awesome"/>
             <br />
-            <label>Type</label>
+            <label><strong>Type</strong></label>
             <br />
-            <input type="text" name="type" className="form-control" required {...register('value_name')} />
+            <input type="text" name="type" className="form-control" required {...register('value_name')} placeholder="e.g. RPG, FPS"/>
             <br />
             <br />
             <input className="btn btn-primary" type="submit" />
@@ -61,6 +62,7 @@ function NewGame(props) {
         </div>
       </div>
     </div>
+    </main>
   );
 }
 

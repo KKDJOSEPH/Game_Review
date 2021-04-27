@@ -1,6 +1,7 @@
 import { useHistory } from "react-router";
+import { useState , useEffect } from "react";
 import "../css/Evaluate.css";
-
+import PaginationComponent from "../components/Pagination";
 import {
     Card,
     CardImg,
@@ -15,7 +16,31 @@ function Review(props) {
     let game = props.game;
     let index = props.index;
     let currentGame = game[index];
+    let [comments, setComments] = useState([])
+    let [page, setPage] = useState(0);
+    let [total, setTotal] = useState(0);
 
+    useEffect(() => {
+        const fetchComments = async () => {
+          try {
+            const resRaw = await fetch(`/getComments?id=${id}&page=${page}`, {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({ page: page }),
+            });
+            const res = await resRaw.json();
+            setComments(res.comments);
+            setTotal(res.total);
+          } catch (error) {
+            console.error(error);
+          }
+        };
+        fetchComments();
+    }, [id, page]);
+
+    
     const renderGames = () => {
         return(
             <div className="card-deck">
@@ -49,18 +74,19 @@ function Review(props) {
     function RevealComments() {
         console.log("Comments:");
         return (
-            <ul>
-                {currentGame.commentList.map((comment, index) =>(
+            <div>
+                {comments.map((comment, index) =>(
                     <div key={index}>
                         {comment}
                         <hr />
                     </div>
                 ))}
-            </ul>
+            </div>
         )
     }
 
     return (
+      <main>  
       <div className="row">
         <div className="col-12">
         <button
@@ -70,13 +96,22 @@ function Review(props) {
             >
             Return To Home
         </button>
+        <h1>Take a look at how others are talking about this game...</h1>
           {renderGames()}
-          <strong>Comments: </strong>
-          <br />
-          <br />
+          <strong>Comments:</strong>
           {RevealComments()}
+          <br />
+          <br />
+          <div className="Pagination">
+                <PaginationComponent
+                    total={total}
+                    page={page}
+                    onChangePage={setPage}
+                ></PaginationComponent>
+          </div>
         </div>
       </div>
+      </main>
     );
 }
 

@@ -16,7 +16,6 @@ function Platform(platform) {
     if(platform === "Mobile") return <Icon icon={mobileDevice} />;
 }
 
-
 function NewHome(props) {
     let pokeMon = [];
     let core = [];

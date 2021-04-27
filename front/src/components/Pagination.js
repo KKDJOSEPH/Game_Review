@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 function PaginationComponent({ page, onChangePage, total }) {
     let numPages = 6;
     let minPageInRange = Math.max(0, page - numPages / 2);
@@ -47,12 +49,16 @@ function PaginationComponent({ page, onChangePage, total }) {
 
               <li className="nav-item">
                 <button className="main_btn page-link" onClick={() => onChangePage(lastPage)}>
-                  Last ({lastPage})
+                  Last
                 </button>
               </li>
             </ul>
         </div>
     );
 }
+
+PaginationComponent.propTypes = {
+  pages: PropTypes.array,
+};
 
 export default PaginationComponent;

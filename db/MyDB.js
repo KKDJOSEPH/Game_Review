@@ -66,6 +66,24 @@ function MyDB() {
         games.insertOne(newGame);
     };
 
+    myDB.getComments = async (id) => {
+        let client;
+        try {
+          client = new MongoClient(url, { useUnifiedTopology: true });
+          await client.connect();
+          const db = client.db(DB_NAME);
+          const collection = db.collection("gameInfo");
+          const result = await collection
+            .findOne({ _id: id });
+          console.log(result);
+          return result.commentList;
+        } catch (error) {
+          return error;
+        } finally {
+          client.close();
+        }
+    };
+
     myDB.addComment = async (newComment) =>{
         //const ObjectId = require("mongodb").ObjectId;
         const id = newComment[0];

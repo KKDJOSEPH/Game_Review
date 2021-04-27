@@ -67,8 +67,8 @@ h1 {
   top: 2px;
 }
 
-.text{
-  display:block;
-  word-break:keep-all;           /* 不换行 */
-  white-space:nowrap;
+.text {
+  display: block;
+  word-break: keep-all; /* 不换行 */
+  white-space: nowrap;
 }

@@ -1,6 +1,8 @@
 import { useHistory } from "react-router";
 import { useForm } from "react-hook-form";
+import { useState , useEffect } from "react";
 import "../css/Evaluate.css";
+import PaginationComponent from "../components/Pagination";
 
 import {
   Card,
@@ -17,6 +19,29 @@ function Evaluate(props) {
   let game = props.game;
   let index = props.index;
   let currentGame = game[index];
+  let [comments, setComments] = useState([])
+  let [page, setPage] = useState(0);
+  let [total, setTotal] = useState(0);
+
+  useEffect(() => {
+    const fetchComments = async () => {
+      try {
+        const resRaw = await fetch(`/getComments?id=${id}&page=${page}`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ page: page }),
+        });
+        const res = await resRaw.json();
+        setComments(res.comments);
+        setTotal(res.total);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    fetchComments();
+}, [id, page]);
 
   const renderGames = () => {
       return(
@@ -51,14 +76,14 @@ function Evaluate(props) {
   function RevealComments() {
     console.log("Comments:");
     return (
-        <ul>
-            {currentGame.commentList.map((comment, index) =>(
+        <div>
+            {comments.map((comment, index) =>(
                 <div key={index}>
                     {comment}
                     <hr />
                 </div>
             ))}
-        </ul>
+        </div>
     )
   }
 
@@ -78,6 +103,7 @@ function Evaluate(props) {
   };
 
   return (
+    <main>
     <div className="row">
       <div className="col-12">
         <button
@@ -87,21 +113,30 @@ function Evaluate(props) {
           >
             Return To Home
         </button>
+        <h1>Want to say something about this game?</h1>
         {renderGames()}
-        <strong>Comments: </strong>
+        <strong>Existing Comments: </strong>
         <br />
         <br />
         {RevealComments()}
+        <div className="Pagination">
+                <PaginationComponent
+                    total={total}
+                    page={page}
+                    onChangePage={setPage}
+                ></PaginationComponent>
+        </div>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <label>New Comment:</label>
+          <label><strong>New Comment:</strong></label>
           <br />
-          <input type="text" className="form-control" name="comment" required {...register('value_name')} />
+          <input type="text" className="form-control" Name="comment" required {...register('value_name')} placeholder="What do you think of this game?" />
           <br />
           <br />
           <input className="btn btn-success" type="submit" />
         </form>
       </div>
     </div>
+    </main>
   );
 }      
 

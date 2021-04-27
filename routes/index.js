@@ -55,4 +55,21 @@ router.post("/comment", async (req) => {
   await myDB.addComment(newGame);
 });
 
+router.post("/getComments", async (req, res) => {
+  const id = req.query.id;
+  try {
+    console.log(req.query);
+    const nPerPage = 5;
+    const page = +req.query.page || 0;
+    const dbRes = await myDB.getComments(id);
+    res.send({
+      comments: dbRes.slice(page * nPerPage, (page + 1) * nPerPage),
+      total: dbRes.length,
+    });
+  } catch (e) {
+    console.log("Error", e);
+    res.status(400).send({ err: e });
+  }
+});
+
 module.exports = router;
