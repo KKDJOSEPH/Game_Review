@@ -8,6 +8,7 @@ import playstationIcon from '@iconify-icons/cib/playstation';
 import nintendoSwitch from '@iconify-icons/mdi/nintendo-switch';
 import pcIcon from '@iconify-icons/ls/pc';
 import mobileDevice from '@iconify-icons/akar-icons/mobile-device';
+import PropTypes from "prop-types";
 
 import {  
   Card,
@@ -134,7 +135,6 @@ function Evaluate(props) {
     <main>
     <div className="App">
       <NavigationComponent/>
-      {/* <div className="row"> */}
       <div className="col-12">
         {/* <h1>Want to say something about this game?</h1> */}
         {renderGames()}
@@ -173,6 +173,13 @@ function Evaluate(props) {
     </div>
     </main>
   );
-}      
+}
+
+Evaluate.propTypes = {
+  comments: PropTypes.array,
+  newComment: PropTypes.array,
+  page: PropTypes.number,
+  total: PropTypes.number,
+};
 
 export default Evaluate;

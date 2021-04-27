@@ -1,4 +1,3 @@
-import { useHistory } from "react-router";
 import { useState , useEffect } from "react";
 import "../css/Evaluate.css";
 import NavigationComponent from "../components/navbar";
@@ -9,6 +8,7 @@ import playstationIcon from '@iconify-icons/cib/playstation';
 import nintendoSwitch from '@iconify-icons/mdi/nintendo-switch';
 import pcIcon from '@iconify-icons/ls/pc';
 import mobileDevice from '@iconify-icons/akar-icons/mobile-device';
+import PropTypes from "prop-types";
 import {
     Card,
     CardImg,
@@ -18,7 +18,6 @@ import {
 } from "reactstrap";
 
 function Review(props) {
-    const history = useHistory();
     let id = props.id;
     let game = props.game;
     let index = props.index;
@@ -116,32 +115,31 @@ function Review(props) {
       <div className="App">
         <div className="col-12">
             <NavigationComponent/>
-        {/* <button
-              type="button"
-              className="corner btn btn-outline-dark"
-              onClick={() => history.push("/")}
-            >
-            Return To Home
-        </button> */}
-        {/* <h1>Take a look at how others are talking about this game...</h1> */}
-          {renderGames()}
-          <strong>Comments:</strong>
-          <br />
-          <br />
-          {RevealComments()}
-          <br />
-          <br />
-          <div className="Pagination">
+            {/* <h1>Take a look at how others are talking about this game...</h1> */}
+            {renderGames()}
+            <strong>Comments:</strong>
+            <br />
+            <br />
+            {RevealComments()}
+            <br />
+            <br />
+            <div className="Pagination">
                 <PaginationComponent
                     total={total}
                     page={page}
                     onChangePage={setPage}
                 ></PaginationComponent>
-          </div>
+            </div>
         </div>
       </div>
       </main>
     );
 }
+
+Review.propTypes = {
+    comments: PropTypes.array,
+    page: PropTypes.number,
+    total: PropTypes.number,
+};
 
 export default Review;
