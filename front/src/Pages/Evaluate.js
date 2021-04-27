@@ -1,5 +1,3 @@
-import { useHistory } from "react-router";
-import { useForm } from "react-hook-form";
 import { useState , useEffect } from "react";
 import "../css/Evaluate.css";
 import PaginationComponent from "../components/Pagination";
@@ -20,13 +18,12 @@ import {
 } from "reactstrap";
 
 function Evaluate(props) {
-  const { register, handleSubmit } = useForm();
-  const history = useHistory();
   let id = props.id;
   let game = props.game;
   let index = props.index;
   let currentGame = game[index];
   let [comments, setComments] = useState([])
+  let [newComment, setNewComment] = useState([]);
   let [page, setPage] = useState(0);
   let [total, setTotal] = useState(0);
 
@@ -55,7 +52,7 @@ function Evaluate(props) {
       }
     };
     fetchComments();
-}, [id, page]);
+  }, [id, page]);
 
   const renderGames = () => {
       return(
@@ -115,20 +112,23 @@ function Evaluate(props) {
     )
   }
 
-  async function postComment(data) {
-    await fetch("/comment", {
+  const createComment = async () => {
+    // console.log(id);
+    // console.log("***************");
+    await fetch("/createComment", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(data),
+      body: JSON.stringify({
+        game_Id: id,
+        new_Comment: newComment,
+      }),
+    }).then(() => {
+      console.log("Fetching data...");
+      window.location.reload();
     });
   }
-
-  const onSubmit = async (data) => {
-    data["_id"] = currentGame.id;
-    postComment(data);
-  };
 
   return (
     <main>
@@ -136,13 +136,6 @@ function Evaluate(props) {
       <NavigationComponent/>
       {/* <div className="row"> */}
       <div className="col-12">
-        {/* <button
-            type="button"
-            className="corner btn btn-outline-dark"
-            onClick={() => history.push("/Game_in")}
-          >
-            Return To Home
-        </button> */}
         {/* <h1>Want to say something about this game?</h1> */}
         {renderGames()}
         <strong>Existing Comments: </strong>
@@ -156,16 +149,27 @@ function Evaluate(props) {
                     onChangePage={setPage}
                 ></PaginationComponent>
         </div>
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <label><strong>New Comment:</strong></label>
-          <br />
-          <input type="text" className="form-control" Name="comment" required {...register('value_name')} placeholder="What do you think of this game?" />
-          <br />
-          <br />
-          <input className="btn btn-success" type="submit" />
-        </form>
+        <div className="d-flex flex-row align-items-start">
+              <textarea
+                rows="4"
+                className="form-control"
+                name="description"
+                aria-label="commentInput"
+                onChange={(e) => setNewComment(e.target.value)}
+                style={{ resize: "none" }}
+              ></textarea>
+            </div>
+            <div className="mt-2 pull-right">
+              <button
+                className="btn"
+                id="postComment"
+                type="button"
+                onClick={createComment}
+              >
+                Submit
+              </button>
+            </div>
       </div>
-      {/* </div> */}
     </div>
     </main>
   );

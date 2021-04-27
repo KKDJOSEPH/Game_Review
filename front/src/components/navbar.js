@@ -1,4 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
+import logo from "../components/game_icon4.png";
 function NavigationComponent() {
     const location = useLocation();
     console.log("Render NavigationComponent", location);
@@ -9,7 +10,7 @@ function NavigationComponent() {
             &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                 <Link className="navbar-brand" to="/">
                     <img
-                        src="./game_icon4.png"
+                        src={logo}
                         alt="game_icon"
                         width="50"
                         height="50"
