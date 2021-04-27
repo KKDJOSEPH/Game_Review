@@ -1,5 +1,5 @@
 import "../css/newHome.css"
-import NavigationComponent from "../components/NavBar";
+import NavigationComponent from "../components/navbar";
 import {Link} from "react-router-dom";
 import React from "react";
 import StarRatings from "react-star-ratings";
@@ -15,7 +15,6 @@ function Platform(platform) {
     if(platform === "PS4") return <Icon icon={playstationIcon} />;
     if(platform === "Mobile") return <Icon icon={mobileDevice} />;
 }
-
 
 function NewHome(props) {
     let pokeMon = [];
@@ -92,7 +91,7 @@ function NewHome(props) {
                             <button
                                 className=" main_btn btn btn-primary"
                             >
-                                Learn more >
+                                Learn more {">"}
                             </button>
                         </Link>
                         <br/>
@@ -127,7 +126,7 @@ function NewHome(props) {
                             <button
                                 className=" main_btn btn btn-primary"
                             >
-                                Starting at $199.99 MSRP* >
+                                Starting at $199.99 MSRP* {">"}
                             </button>
                         </Link>
                         <br/>

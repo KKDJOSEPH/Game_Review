@@ -5,6 +5,12 @@ body {
   font-size: 1rem;
 }
 
+.name {
+  font-size: 26px;
+  font-family: museo-sans, sans-serif;
+  color: black;
+  z-index: 99;
+}
 .card-body {
   background-color: #faf9de;
 }
@@ -27,9 +33,9 @@ canvas {
 }
 
 p {
-  font-size: 4.5vh;
-  width: 60%;
-  padding: 10px;
+  font-size: 3.5vh;
+  width: 100%;
+  /* padding: 10px; */
   margin: 3rem;
 }
 
@@ -57,8 +63,26 @@ h1 {
   top: 2px;
 }
 
-.text{
-  display:block;
-  word-break:keep-all;           /* 不换行 */
-  white-space:nowrap;
+.text {
+  display: block;
+  word-break: keep-all; /* 不换行 */
+  white-space: nowrap;
+}
+
+.card-deck {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.newGame {
+  text-align: center;
+  color: #dc3545;
+  font-size: 45px;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.form-control {
+  border-radius: 1rem;
+  border: 1px solid #000000;
 }

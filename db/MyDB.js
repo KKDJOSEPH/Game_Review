@@ -67,26 +67,48 @@ function MyDB() {
         games.insertOne(newGame);
     };
 
-    myDB.addComment = async (newComment) =>{
-        //const ObjectId = require("mongodb").ObjectId;
-        const id = newComment[0];
-        //const o_id = new ObjectId(id);
-        const client = new MongoClient(url, {useUnifiedTopology: true});
-        await client.connect();
-        const db = client.db(DB_NAME);
-        const games = db.collection("gameInfo");
-        console.log("running addcomment");
-        const query = { _id: id };
-        const update = {
-            $push: {
-                commentList:{
-                    comment: newComment[1]
-                },
-            },
-        };
-        games.findOneAndUpdate(query, update);
-        console.log(query)
-    }
+    myDB.getComments = async (id) => {
+        let client;
+        try {
+          client = new MongoClient(url, { useUnifiedTopology: true });
+          await client.connect();
+          const db = client.db(DB_NAME);
+          const collection = db.collection("gameInfo");
+          const result = await collection
+            .findOne({ _id: id });
+          console.log(result);
+          return result.commentList;
+        } catch (error) {
+          return error;
+        } finally {
+          client.close();
+        }
+    };
+
+    myDB.createComment = async (newComment, gameId) => {
+        let client;
+        try {
+          const game_id = gameId;
+          client = new MongoClient(url, { useUnifiedTopology: true });
+          await client.connect();
+          const db = client.db(DB_NAME);
+        //   console.log("Updating...")
+        //   console.log(newComment);
+        //   console.log(gameId);
+          const res = await db.collection("gameInfo").updateOne(
+            { _id: game_id },
+            {
+              $push: {
+                commentList: newComment
+              }
+            }
+          );
+          console.log("Updated");
+          return res;
+        } finally {
+          client.close();
+        }
+    };
 
     myDB.loadGame = async () => {
         const client = new MongoClient(url, {useUnifiedTopology: true});

@@ -47,12 +47,36 @@ router.post("/new", async (req, res) => {
   await myDB.insertGame(newGame);
 });
 
-// eslint-disable-next-line no-unused-vars
-router.post("/comment", async (req) => {
-  const id = req.body._id;
-  const comment = req.body.comment;
-  const newGame = {"_id": id, "Comment": comment};
-  await myDB.addComment(newGame);
+router.post("/getComments", async (req, res) => {
+  const id = req.query.id;
+  try {
+    console.log(req.query);
+    const nPerPage = 5;
+    const page = +req.query.page || 0;
+    const dbRes = await myDB.getComments(id);
+    res.send({
+      comments: dbRes.slice(page * nPerPage, (page + 1) * nPerPage),
+      total: dbRes.length,
+    });
+  } catch (e) {
+    console.log("Error", e);
+    res.status(400).send({ err: e });
+  }
+});
+
+router.post("/createComment", async (req, res) => {
+  const gameId = req.body.game_Id;
+  const newComment = req.body.new_Comment;
+  // console.log("****************************" + newComment);
+  // console.log(newComment);
+  // console.log(gameId);
+  try {
+    await myDB.createComment(newComment, gameId);
+    res.json({ message: "Add new comment successfully!" });
+  } catch {
+    // eslint-disable-next-line no-undef
+    res.status(400).json({ error: err });
+  }
 });
 
 module.exports = router;
