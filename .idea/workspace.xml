@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="227d21c0-cf6c-4f97-b193-9cecd2b76b1b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/Pages/Review.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/Pages/Review.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/Pages/newHome.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/Pages/newHome.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/css/newHome.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/css/newHome.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +34,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/front/src/Pages" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
@@ -96,7 +97,8 @@
       <workItem from="1618444725740" duration="1333000" />
       <workItem from="1619208591940" duration="43841000" />
       <workItem from="1619480059292" duration="263000" />
-      <workItem from="1619480478483" duration="12222000" />
+      <workItem from="1619480478483" duration="13162000" />
+      <workItem from="1619564318157" duration="892000" />
     </task>
     <servers />
   </component>
@@ -112,10 +114,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1619521640212" />
-    <state x="564" y="331" key="FileChooserDialogImpl" timestamp="1618184017888">
+    <state x="564" y="331" key="FileChooserDialogImpl" timestamp="1619551003999">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="564" y="331" key="FileChooserDialogImpl/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1618184017888" />
+    <state x="564" y="331" key="FileChooserDialogImpl/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1619551003999" />
     <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1618180438279">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -12,7 +12,7 @@ body {
 
 .pokemon > .Game-ol .Game-li{
     columns: 1;
-    width: 45%;
+    width: 31%;
     list-style-position: inside;
     margin: 10px;
     font-family: sans-serif;
@@ -91,6 +91,10 @@ body {
 .bottom {
     border-bottom: solid darkgrey;
     border-bottom-width: thin;
+}
+
+.pokemon_btn {
+    float: right;
 }
 
 .main_btn {

@@ -21,7 +21,7 @@ function NewHome(props) {
     let core = [];
     let games = props.game;
     for(let i=0; i<games.length; i++){
-        if(pokeMon.length === 2) break;
+        if(pokeMon.length === 3) break;
         if(games[i].Type === "Pokemon"){
             pokeMon.push(games[i]);
         }
@@ -101,14 +101,49 @@ function NewHome(props) {
                     <br/>
                 </section>
                 <br/>
-                <div className="pokemon_text"> New Pokemon Release </div>
+
+                <span className="head_text">
+                    New Pokemon Release
+                </span>
+                <span className= "pokemon_btn" >
+                    <Link to={`/home`}>
+                        <button
+                            className=" main_btn btn btn-primary"
+                        >
+                            Check All Games {">"}
+                        </button>
+                    </Link>
+                </span>
+
+
                 <section className="pokemon">
                     <ol className="Game-ol">{pokemon(pokeMon)}</ol>
                     <br/>
                     <br/>
                 </section>
-                <div className="pokemon_text"> New Gaming Systems </div>
+
+                <br/>
+                <span className="head_text">
+                    Game for Core Players
+                </span>
+                <span className= "pokemon_btn" >
+                    <Link to={`/home`}>
+                        <button
+                            className=" main_btn btn btn-primary"
+                        >
+                            Check All Games {">"}
+                        </button>
+                    </Link>
+                </span>
+                <section className="hard_core">
+                    <ol className="Game-ol">{pokemon(core)}</ol>
+                    <br/>
+                    <br/>
+                </section>
+
+                <br/>
                 <section className="Switch">
+                    <div className="pokemon_text"> New Gaming Systems </div>
                     <br/>
                     <Link to={{ pathname: "https://www.nintendo.com/switch/" }} target="_blank">
                         <img
@@ -131,18 +166,6 @@ function NewHome(props) {
                         </Link>
                         <br/>
                     </span>
-                </section>
-                <div className="bottom">
-                    <br/>
-                    <br/>
-                    <br/>
-                </div>
-                <br/>
-                <div className="pokemon_text"> Game for core players </div>
-                <section className="hard_core">
-                    <ol className="Game-ol">{pokemon(core)}</ol>
-                    <br/>
-                    <br/>
                 </section>
             </div>
         </div>
