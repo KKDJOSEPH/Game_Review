@@ -61,7 +61,7 @@ function Games(props) {
     return (
         <div className="col">
             <nav className="navbar navbar-expand-lg navbar-light" role="navigation">
-                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                 <Link className="navbar-brand" to="/">
                     <img
                         src="./game_icon4.png"
@@ -129,17 +129,6 @@ function Games(props) {
                                 to="/signin"
                             >
                                 Sign In
-                            </Link>
-                        </li>
-                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                        <li className="nav-item">
-                            <Link
-                                className={
-                                    "nav-link" + (location.pathname === "/newgame" ? " active" : "")
-                                }
-                                to="/newgame"
-                            >
-                                Add a New Game
                             </Link>
                         </li>
                         &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;

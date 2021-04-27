@@ -1,7 +1,5 @@
 import React from "react";
 import "../css/SignUp.css";
-
-import { Link } from "react-router-dom";
 import NavigationComponent from "../components/navbar";
 function SignUp() {
     const urlParams = new URLSearchParams(window.location.search);
