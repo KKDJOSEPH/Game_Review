@@ -29,14 +29,15 @@ function MyDB() {
         const db = client.db(DB_NAME);
         const result = await db.collection("userInfo");
         const users = await result.find().toArray();
-        // console.log("what is users I have now?   ", users);
         let flag = true;
-        await users.every(item => {
-            if (item.name === Users.userName) {
+        for(let i=0; i<users.length; i++){
+            console.log(Users.userName);
+            if(users[i].name === Users.userName){
+                console.log("why not false");
                 flag =  false;
                 return flag;
             }
-        });
+        }
         if(flag){
             const myobj = {name: Users.userName,password: Users.passWord};
             await result.insertOne(myobj, function(err) {

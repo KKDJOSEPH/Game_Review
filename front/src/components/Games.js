@@ -45,8 +45,8 @@ function Games(props) {
                         <span className="Game_Info2">
                             <StarRatings
                                 numberOfStars={5}
-                                rating= {parseInt(p.Rating)}
-                                starDimension="18px"
+                                rating= {parseFloat(p.Rating)}
+                                starDimension="20px"
                                 starEmptyColor='grey'
                                 starRatedColor={'rgb(243,69,67)'}
                                 starSpacing="0"

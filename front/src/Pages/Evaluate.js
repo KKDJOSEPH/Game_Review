@@ -1,6 +1,7 @@
 import { useHistory } from "react-router";
 import { useForm } from "react-hook-form";
 import "../css/Evaluate.css";
+import logo from "./game_icon4.png"
 
 import {
   Card,
@@ -9,6 +10,8 @@ import {
   CardSubtitle,
   CardBody,
 } from "reactstrap";
+import NavigationComponent from "../components/NavBar";
+import {Link, useLocation} from "react-router-dom";
 
 function Evaluate(props) {
   const { register, handleSubmit } = useForm();
@@ -76,30 +79,25 @@ function Evaluate(props) {
     data["_id"] = currentGame.id;
     postComment(data);
   };
-
+    const location = useLocation();
+    console.log("Render NavigationComponent", location);
   return (
-    <div className="row">
+    <div className="App">
+        <NavigationComponent/>
       <div className="col-12">
-        <button
-            type="button"
-            className="corner btn btn-outline-dark"
-            onClick={() => history.push("/Game_in")}
-          >
-            Return To Home
-        </button>
-        {renderGames()}
-        <strong>Comments: </strong>
-        <br />
-        <br />
-        {RevealComments()}
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <label>New Comment:</label>
-          <br />
-          <input type="text" className="form-control" name="comment" required {...register('value_name')} />
+          {renderGames()}
+          <strong>Comments: </strong>
           <br />
           <br />
-          <input className="btn btn-success" type="submit" />
-        </form>
+          {RevealComments()}
+          <form onSubmit={handleSubmit(onSubmit)}>
+              <label>New Comment:</label>
+              <br />
+              <input type="text" className="form-control" name="comment" required {...register('value_name')} />
+              <br />
+              <br />
+              <input className="btn btn-success" type="submit" />
+          </form>
       </div>
     </div>
   );

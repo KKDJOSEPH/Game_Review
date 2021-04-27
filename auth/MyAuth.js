@@ -37,7 +37,7 @@ router.post("/signup", async function (req, res) {
   }else if(req.body.passWord === ""){
     res.redirect("/signup?error=Password is empty");
     return;
-  }else if(req.body.passWord != req.body.passWord2){
+  }else if(req.body.passWord !== req.body.passWord2){
     res.redirect("/signup?error=Passwords are not the same");
     return;
   }else{

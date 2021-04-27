@@ -1,5 +1,5 @@
 import "../css/newHome.css"
-import NavigationComponent from "../components/navbar";
+import NavigationComponent from "../components/NavBar";
 import {Link} from "react-router-dom";
 import React from "react";
 import StarRatings from "react-star-ratings";
@@ -56,8 +56,8 @@ function NewHome(props) {
                         <span className="Game_Info2">
                             <StarRatings
                                 numberOfStars={5}
-                                rating= {parseInt(p.Rating)}
-                                starDimension="18px"
+                                rating= {parseFloat(p.Rating)}
+                                starDimension="20px"
                                 starEmptyColor='grey'
                                 starRatedColor={'red'}
                                 starSpacing="0"
