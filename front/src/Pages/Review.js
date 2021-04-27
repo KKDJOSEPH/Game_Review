@@ -1,6 +1,6 @@
 import { useState , useEffect } from "react";
 import "../css/Evaluate.css";
-import NavigationComponent from "../components/navbar";
+import NavigationComponent from "./navbar";
 import PaginationComponent from "../components/Pagination";
 import StarRatings from "react-star-ratings";
 import { Icon } from '@iconify/react';
