@@ -39,7 +39,7 @@ function NewGame(props) {
             Return to Home
           </button> */}
           <form onSubmit={handleSubmit(onSubmit)}>
-            <h1><strong>Add a New Game</strong></h1>
+            <h1 className="newGame"><strong>Add a New Game</strong></h1>
             <label><strong>Game Name</strong></label>
             <br />
             <input type="text" name="name" className="form-control" required {...register('value_name')} id="name" placeholder="e.g. Super Mario"/>
