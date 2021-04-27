@@ -8,6 +8,7 @@ import playstationIcon from '@iconify-icons/cib/playstation';
 import nintendoSwitch from '@iconify-icons/mdi/nintendo-switch';
 import pcIcon from '@iconify-icons/ls/pc';
 import mobileDevice from '@iconify-icons/akar-icons/mobile-device';
+import PropTypes from "prop-types";
 
 import {
     Card,
@@ -70,7 +71,7 @@ function Evaluate(props) {
                         <CardBody>
                             <CardTitle>
                                 <strong>
-                                    <h1 className="name">{currentGame.Name}</h1>
+                                    <p>{currentGame.Name}</p >
                                 </strong>
                             </CardTitle>
                             <CardSubtitle>
@@ -134,7 +135,6 @@ function Evaluate(props) {
         <main>
             <div className="App">
                 <NavigationComponent/>
-                {/* <div className="row"> */}
                 <div className="col-12">
                     {/* <h1>Want to say something about this game?</h1> */}
                     {renderGames()}
@@ -150,14 +150,14 @@ function Evaluate(props) {
                         />
                     </div>
                     <div className="d-flex flex-row align-items-start">
-                      <textarea
-                        rows="4"
-                        className="form-control"
-                        name="description"
-                        aria-label="commentInput"
-                        onChange={(e) => setNewComment(e.target.value)}
-                        style={{resize: "none"}}
-                      />
+              <textarea
+                rows="4"
+                className="form-control"
+                name="description"
+                aria-label="commentInput"
+                onChange={(e) => setNewComment(e.target.value)}
+                style={{resize: "none"}}
+              />
                     </div>
                     <div className="mt-2 pull-right">
                         <button
@@ -174,5 +174,12 @@ function Evaluate(props) {
         </main>
     );
 }
+
+Evaluate.propTypes = {
+    comments: PropTypes.array,
+    newComment: PropTypes.array,
+    page: PropTypes.number,
+    total: PropTypes.number,
+};
 
 export default Evaluate;
