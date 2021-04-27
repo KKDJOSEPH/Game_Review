@@ -1,5 +1,5 @@
 import "../css/newHome.css"
-import NavigationComponent from "../components/navbar";
+import NavigationComponent from "./navbar";
 import {Link} from "react-router-dom";
 import React from "react";
 import StarRatings from "react-star-ratings";

@@ -1,6 +1,6 @@
 import React from "react";
 import "../css/SignUp.css";
-import NavigationComponent from "../components/navbar";
+import NavigationComponent from "./navbar";
 function SignUp() {
     const urlParams = new URLSearchParams(window.location.search);
     const error = urlParams.get("error");

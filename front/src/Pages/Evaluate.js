@@ -1,7 +1,7 @@
 import { useState , useEffect } from "react";
 import "../css/Evaluate.css";
 import PaginationComponent from "../components/Pagination";
-import NavigationComponent from "../components/navbar";
+import NavigationComponent from "./navbar";
 import StarRatings from "react-star-ratings";
 import { Icon } from '@iconify/react';
 import playstationIcon from '@iconify-icons/cib/playstation';

@@ -1,7 +1,7 @@
 import React from "react";
 import "../css/SignIn.css";
 import { Link } from "react-router-dom";
-import NavigationComponent from "../components/navbar";
+import NavigationComponent from "./navbar";
 
 function SignIn() {
     const urlParams = new URLSearchParams(window.location.search);

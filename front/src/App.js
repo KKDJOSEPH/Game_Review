@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./Pages/home.js";
 import SignUp from "./Pages/signup";
 import SignIn from "./Pages/signin";
+import NewGame from "./Pages/newgame.js";
 import Game_in from "./Pages/Game_in";
 import Review from "./Pages/Review";
 import Evaluate from "./Pages/Evaluate";
@@ -38,6 +39,7 @@ function App() {
                   <Route path="/home" component={Home} />
                   <Route path="/signup" component={SignUp} />
                   <Route path="/signin" component={SignIn} />
+                  <Route path="/newgame" component={NewGame} />
                   <Route path="/Game_in" component={Game_in} />
                   {id.map((p, i) => <Route key={`${i}`} path={`/review/${p}`} component={() => <Review id={p} game={games} index={i}/>}  />)}
                   {id.map((p, i) => <Route key={`${i}`} path={`/evaluate/${p}`} component={() => <Evaluate id={p} game={games} index={i}/>}  />)}
