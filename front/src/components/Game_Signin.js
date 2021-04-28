@@ -83,6 +83,7 @@ function GamesSignin(props) {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                        // please consider using css files
                         &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                         <li className="nav-item">
                             <Link
