@@ -33,6 +33,7 @@ function NavigationComponent() {
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                         <li className="nav-item">
+                            // refactor code to extract these Link components as a customized component
                             <Link
                                 className={
                                     "nav-link" + (location.pathname === "/" ? " active" : "")
