@@ -9,7 +9,7 @@ React hook + Nodejs + Express + MongoDB + Heroku
 [Haoyang Ding](https://github.com/KKDJOSEPH) | [Jianwei Bi](https://github.com/jianweibi) 
 
 ## Description
-- CS 5610 Project 3
+- CS 5610 Project 3 and Final Project
 - Project Objective: Apply the concepts learned in class by building a basic fullstack application with React-hook, Nodejs, Express, javascript and MongoDB. Deploy on Heroku.
 - Class Link: https://johnguerra.co/classes/webDevelopment_spring_2021/
 - Professor: <a href="https://johnguerra.co/"> John Alexis Guerra Gómez </a>
@@ -40,10 +40,16 @@ $ yarn start
   * routes: Backend javascript files.
 
 ## Screenshots:
+- Old Version
 ![](Screenshots/mainpage.png)
 ![](Screenshots/signin.png)
 ![](Screenshots/search.png)
 ![](Screenshots/rating.png)
+
+- New Version
+![](Screenshots/new_main.png)
+![](Screenshots/new_signin.png)
+![](Screenshots/new_game.png)
 
 ### License
 [MIT]()
